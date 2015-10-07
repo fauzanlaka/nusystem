@@ -99,5 +99,86 @@
         <p>Sistem pendaftaran masih di peringkat pembangunan , Jika anda jumpa masalah sila hubungi bahagian IT di idarah jamiah, <a href="#" class="alert-link">(Fauzan Hj.Asyari).</a>.</p>
     </div>
 </div>
+    
+    <?php
+    //---------------------Subject registration system---------------------------------
+    $id = $_SESSION['UserID'];
+    $sql1 = "select s.*,f.* from students s inner join fakultys f on s.ft_id=f.ft_id where st_id = '$id' ";
+    $query1 = mysqli_query($con,$sql1);
+    $result1 = mysqli_fetch_array($query1);
+    
+    //Set class system
+    $register = mysqli_query($con, "SELECT r.*,y.* FROM register r INNER JOIN year y ON r.y_id=y.y_id WHERE r.re_id=(SELECT MAX(re_id) FROM register)");
+    $rs_register = mysqli_fetch_array($register);
+    $year_register = $rs_register['year'];
+
+    $studentClass = $result1['class'];
+            
+    $first = $year_register; 
+    $second = $year_register-1;
+    $third  = $year_register-2;
+    $fordth = $year_register-3;
+    //Kelas sekarang
+    $kelas = $studentClass;
+    if($kelas == $first){ $cnow = '1'; }
+    if($kelas == $second){ $cnow = '2'; }
+    if($kelas == $third){ $cnow = '3'; }
+    if($kelas == $fordth){ $cnow = '4'; }
+
+    //Get comparing data
+    $rs_class = $cnow ;
+    $rs_term = $result_reg['term_id'];
+    $ft_id = $result1['ft_id'];
+    $dp_id = $result1['dp_id'];
+    
+    echo $rs_class;
+    echo "<br>";
+    echo $term;
+    echo "<br>";
+    echo $ft_id;
+    echo "<br>";
+    echo $dp_id;
+    
+    
+    //Get all subject to insert into
+    $subject = mysqli_query($con, "SELECT * FROM registerSubject
+                            WHERE rs_class='$rs_class' and rs_term='$rs_term' and ft_id='$ft_id' and dp_id='$dp_id'
+                            ");
+    ?>
+    
+    <table class="table table-striped table-hover ">
+        <thead>
+          <tr>
+            <th>#</th>
+            <th>Column heading</th>
+            <th>Column heading</th>
+            <th>Column heading</th>
+          </tr>
+        </thead>
+        <tbody>
+          <?php
+            while($rowSubject = mysqli_fetch_array($subject)){
+                $tc_id = $rowSubject['tc_id'];
+                $rs_id = $rowSubject['rs_id'];
+                
+                $teaching = mysqli_query($con, "SELECT tc.*,s.* FROM teaching tc
+                            INNER JOIN subject s ON tc.s_id=s.s_id
+                            WHERE tc_id='$tc_id'");
+                $sqlTeaching = mysqli_fetch_array($teaching);
+                
+                $sCode = $sqlTeaching['s_code'];
+                
+          ?>
+          <tr>
+            <td><?= $sCode ?></td>
+            <td>Column content</td>
+            <td>Column content</td>
+            <td>Column content</td>
+          </tr>
+          <?php
+            }
+          ?>
+        </tbody>
+    </table>
    
 </blockquote>
