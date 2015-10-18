@@ -1,0 +1,4 @@
+<a href="faculty_list.php"><button type="button" class="btn btn-success"><span class="glyphicon glyphicon-list"></span> Daftar Fakulti</button></a>
+<a href="department_list.php"><button type="button" class="btn btn-success"><span class="glyphicon glyphicon-list"></span> Daftar jurusan</button></a>
+<a href="add_faculty_form.php"><button type="button" class="btn btn-success"><span class="glyphicon glyphicon-plus-sign"></span>  Tambah fakulti</button></a>
+<a href="add_jurusan_form.php"><button type="button" class="btn btn-success"><span class="glyphicon glyphicon-plus-sign"></span> Tambah jurusan</button></a>

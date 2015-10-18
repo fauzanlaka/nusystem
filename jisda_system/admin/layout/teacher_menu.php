@@ -1,0 +1,2 @@
+<a href="index_teacher.php"><button type="button" class="btn btn-success"><span class="glyphicon glyphicon-list"></span> Guru</button></a>
+<a href="add_teacher.php"><button type="button" class="btn btn-success"><span class="glyphicon glyphicon-plus-sign"></span> Data guru</button></a>

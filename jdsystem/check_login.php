@@ -14,7 +14,8 @@ function login(){
 	if(!$objResult)
 	{
 		echo "NO.POKOK atau PASSWORD salah ,";?> <a href="index.php">Login lagi</a>
-	<?php	exit();
+	<?php	
+            exit();
 	}
 	else
 	{

@@ -18,6 +18,7 @@
     $result_stuid = mysqli_fetch_array($query_stuid);
     
     $stu_id = $result_stuid['student_id'];
+    
 ?>
 <blockquote>
     <p><span class="glyphicon glyphicon-tags"></span>  DAFTAR BELAJAR</p>
@@ -28,8 +29,39 @@
     <h3 class="panel-title">Sistem pendaftaran</h3>
   </div>
   <div class="panel-body">
-      
-      
+         
+   <?php
+       if($reg_status == 1){
+           
+           //Set class system
+            $register = mysqli_query($con, "SELECT r.*,y.* FROM register r INNER JOIN year y ON r.y_id=y.y_id WHERE r.re_id=(SELECT MAX(re_id) FROM register)");
+            $rs_register = mysqli_fetch_array($register);
+            $year_register = $rs_register['year'];
+
+            $studentClass = $result_stuid['class'];
+
+            $first = $year_register; 
+            $second = $year_register-1;
+            $third  = $year_register-2;
+            $fordth = $year_register-3;
+            //Kelas sekarang
+            $kelas = $studentClass;
+            if($kelas == $first){ $cnow = '1'; }
+            if($kelas == $second){ $cnow = '2'; }
+            if($kelas == $third){ $cnow = '3'; }
+            if($kelas == $fordth){ $cnow = '4'; }
+            
+            //Set type of yuran payment
+            if($cnow == '1' or $cnow == '4'){
+                $yuranType = "special_prize";
+            }else{
+                $yuranType = "common_prize";
+            }
+           
+   ?>
+    <form class="form-horizontal" method='post' action='?page=register&&registerpage=stdsave'>
+        
+        
     <?php
     //---------------------Subject registration system---------------------------------
     $id = $_SESSION['UserID'];
@@ -62,79 +94,60 @@
     $dp_id = $result1['dp_id'];
 
     //Get all subject to insert into
-    $subject = mysqli_query($con, "SELECT * FROM registerSubject
-                            WHERE rs_class='$rs_class' and rs_term='$rs_term' and ft_id='$ft_id' and dp_id='$dp_id'
+    $subject = mysqli_query($con, "SELECT rs.*,s.*,t.* FROM registerSubject rs
+                           INNER JOIN subject s ON rs.s_id=s.s_id
+                           INNER JOIN teachers t ON rs.t_id=t.t_id
+                           WHERE rs.rs_class='$rs_class' and rs.rs_term='$rs_term' and rs.ft_id='$ft_id' and rs.dp_id='$dp_id'
                             ");
     ?>
     
-    <table class="table table-striped table-hover table-bordered ">
-        <thead>
-          <tr>
-            <td align="center"><b>KOD</b></td>
-            <td align="center"><b>MATA KULIAH</b></td>
-            <td align="center"><b>PENSYARAH</b></td>
-          </tr>
-        </thead>
-        <tbody>
-          <?php
-            while($rowSubject = mysqli_fetch_array($subject)){
-                $tc_id = $rowSubject['tc_id'];
-                $rs_id = $rowSubject['rs_id'];
-                
-                $teaching = mysqli_query($con, "SELECT tc.*,s.*,t.* FROM teaching tc
-                            INNER JOIN subject s ON tc.s_id=s.s_id
-                            INNER JOIN teachers t ON tc.t_id=t.t_id
-                            WHERE tc_id='$tc_id'");
-                $sqlTeaching = mysqli_fetch_array($teaching);
-                
-                $sCode = $sqlTeaching['s_code'];
-                $sName = $sqlTeaching['s_rumiName'];
-                $fname = $sqlTeaching['t_fnameRumi'];
-                $lname = $sqlTeaching['t_lnameRumi'];
-          ?>
-          <tr>
-            <td><?= $sCode ?></td>
-            <td><?= $sName ?></td>
-            <td><?= $fname ?> - <?= $lname ?></td>
-          </tr>
-          <?php
-            }
-          ?>
-        </tbody>
-    </table>
-      
-      
-      
-   <?php
-       if($reg_status == 1){
-           
-           //Set class system
-            $register = mysqli_query($con, "SELECT r.*,y.* FROM register r INNER JOIN year y ON r.y_id=y.y_id WHERE r.re_id=(SELECT MAX(re_id) FROM register)");
-            $rs_register = mysqli_fetch_array($register);
-            $year_register = $rs_register['year'];
+            <table class="table table-striped table-hover table-bordered ">
+                <thead>
+                  <tr>
+                    <td align="center"><b>KOD</b></td>
+                    <td align="center"><b>MATA KULIAH</b></td>
+                    <td align="center"><b>PENSYARAH</b></td>
+                  </tr>
+                </thead>
+                <tbody>
+                  <?php
+                    $i = 0 ;
+                    while($rowSubject = mysqli_fetch_array($subject)){
+                        
 
-            $studentClass = $result_stuid['class'];
+                        /*
+                        $teaching = mysqli_query($con, "SELECT tc.*,s.*,t.* FROM teaching tc
+                                    INNER JOIN subject s ON tc.s_id=s.s_id
+                                    INNER JOIN teachers t ON tc.t_id=t.t_id
+                                    WHERE tc_id='$tc_id'");
+                        $sqlTeaching = mysqli_fetch_array($teaching);
+                        */
+                        $s_id = $rowSubject['s_id'];
+                        $t_id = $rowSubject['t_id'];
+                        $sCode = $rowSubject['s_code'];
+                        $s_id = $rowSubject['s_id'];
+                        $t_id = $rowSubject['t_id'];
+                        $st_id = $result1['st_id']; 
+                        $sName = $rowSubject['s_rumiName'];
+                        $fname = $rowSubject['t_fnameRumi'];
+                        $lname = $rowSubject['t_lnameRumi'];
 
-            $first = $year_register; 
-            $second = $year_register-1;
-            $third  = $year_register-2;
-            $fordth = $year_register-3;
-            //Kelas sekarang
-            $kelas = $studentClass;
-            if($kelas == $first){ $cnow = '1'; }
-            if($kelas == $second){ $cnow = '2'; }
-            if($kelas == $third){ $cnow = '3'; }
-            if($kelas == $fordth){ $cnow = '4'; }
-            
-            //Set type of yuran payment
-            if($cnow == '1' or $cnow == '4'){
-                $yuranType = "special_prize";
-            }else{
-                $yuranType = "common_prize";
-            }
-           
-   ?>
-    <form class="form-horizontal" method='post' action='?page=register&&registerpage=stdsave'>
+                  echo "<tr>";
+                    echo "<td>{$sCode}</td>";
+                    echo "<td>{$sName}</td>";
+                    echo "<td>{$fname}  {$lname}</td>";
+                    echo "<input type='hidden' name='s_id[$i]' value='{$s_id}' />";
+                    echo "<input type='hidden' name='stu_id[$i]' value='{$st_id}' />";
+                    echo "<input type='hidden' name='t_id[$i]' value='{$t_id}' />";
+                    echo "<input type='hidden' name='ss_term[$i]' value='{$term}'";
+                    echo "<input type='hidden' name='ss_year[$i]' value='{$year}'";
+                  echo "</tr>";
+                        ++$i;
+                    }
+                  ?>
+                </tbody>
+            </table>   
+        
             <div class="form-group">
               <label class="col-lg-1"></label>
               <div class="col-lg-9">
@@ -154,6 +167,7 @@
             <input type="hidden" name="year" value="<?= $year ?>">
             <input type="hidden" name="date" value="<?= $date ?>">
             <input type="hidden" name="stu_id" value="<?= $stu_id ?>">
+            <input type="hidden" name="i" value="<?= $i ?>">
         </div>
 
         <div class="form-group">

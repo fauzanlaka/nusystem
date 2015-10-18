@@ -76,6 +76,9 @@
                             case 'activity':
                                 include 'module/activity/index.php';
                                 break;
+                            case 'score':
+                                include 'module/score/index.php';
+                                break;
                         }
             ?>
             

@@ -1,0 +1,369 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: ArtSee 1.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2011-08-02 17:34+0600\n"
+"PO-Revision-Date: \n"
+"Last-Translator: Ann <anochka1985@gmail.com>\n"
+"Language-Team: Ann <anochka1985@gmail.com>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Poedit-Language: Russian\n"
+"X-Poedit-Country: RUSSIAN FEDERATION\n"
+"X-Poedit-SourceCharset: utf-8\n"
+"X-Poedit-KeywordsList: esc_html__;esc_html_e;esc_attr__;esc_attr_e\n"
+"X-Poedit-Basepath: .\n"
+"X-Poedit-SearchPath-0: .\n"
+"X-Poedit-SearchPath-1: ..\n"
+
+#: ../404.php:6
+msgid "Sorry, the page your requested could not be found, or no longer exists."
+msgstr "К сожалению, запрашиваемая страница не найдена или не существует."
+
+#: ../comments.php:4
+msgid "Please do not load this page directly. Thanks!"
+msgstr "Пожалуйста, не загружайте эту страницу напрямую. Спасибо!"
+
+#: ../comments.php:8
+msgid "This post is password protected. Enter the password to view comments."
+msgstr "Эта страница защищена паролем. Введите пароль для просмотра комментариев."
+
+#: ../comments.php:15
+msgid "No Responses"
+msgstr "Нет комментариев"
+
+#: ../comments.php:15
+msgid "One Response"
+msgstr "Один комментарий"
+
+#: ../comments.php:15
+msgid "% Responses"
+msgstr "% Коммент."
+
+#: ../comments.php:15
+msgid " to"
+msgstr " : "
+
+#: ../comments.php:38
+msgid "Trackbacks/Pingbacks"
+msgstr ""
+
+#: ../comments.php:49
+msgid "Comments are closed."
+msgstr "Комментарии закрыты."
+
+#: ../comments.php:53
+msgid "Submit Comment"
+msgstr "Оставить комментарий"
+
+#: ../comments.php:53
+msgid "Leave a Reply"
+msgstr "Оставить комментарий"
+
+#: ../comments.php:53
+#, php-format
+msgid "Leave a Reply to %s"
+msgstr "Оставить комментарий к %s"
+
+#: ../footer.php:2
+msgid "Designed by "
+msgstr "Дизайн"
+
+#: ../footer.php:2
+msgid "Powered by "
+msgstr "Разработано на CMS"
+
+#: ../header.php:46
+msgid "search"
+msgstr "искать"
+
+#: ../header.php:63
+msgid "Home"
+msgstr "Главная"
+
+#: ../index.php:36
+#: ../page-blog.php:70
+msgid "Posted"
+msgstr "Опубликовано"
+
+#: ../index.php:36
+#: ../page-blog.php:70
+msgid "by"
+msgstr " "
+
+#: ../index.php:36
+#: ../page-blog.php:70
+msgid "on"
+msgstr " "
+
+#: ../index.php:36
+#: ../page-blog.php:70
+msgid "in"
+msgstr "в"
+
+#: ../index.php:36
+#: ../page-blog.php:70
+msgid "0 comments"
+msgstr "Нет комментариев"
+
+#: ../index.php:36
+#: ../page-blog.php:70
+msgid "1 comment"
+msgstr "Один комментарий"
+
+#: ../index.php:36
+#: ../page-blog.php:70
+msgid "comments"
+msgstr "коммент."
+
+#: ../index.php:40
+#: ../index.php:57
+#: ../page-blog.php:50
+#: ../page-contact.php:92
+#: ../page-full.php:37
+#: ../page-gallery.php:47
+#: ../page-login.php:44
+#: ../page-search.php:44
+#: ../page-sitemap.php:43
+#: ../page-template-portfolio.php:55
+#: ../page.php:31
+#, php-format
+msgid "Permanent Link to %s"
+msgstr "Перейти >> %s"
+
+#: ../index.php:57
+msgid "Read More"
+msgstr "Далее"
+
+#: ../page-blog.php:90
+#, fuzzy
+msgid "read more"
+msgstr "Далее"
+
+#: ../page-blog.php:115
+#: ../page-contact.php:146
+#: ../page-full.php:46
+#: ../page-gallery.php:96
+#: ../page-login.php:66
+#: ../page-search.php:59
+#: ../page-search.php:95
+#: ../page-sitemap.php:52
+#: ../page-sitemap.php:81
+#: ../page-template-portfolio.php:170
+#: ../page.php:40
+msgid "Pages"
+msgstr "Страницы"
+
+#: ../page-blog.php:116
+#: ../page-contact.php:147
+#: ../page-full.php:47
+#: ../page-gallery.php:97
+#: ../page-login.php:67
+#: ../page-search.php:96
+#: ../page-sitemap.php:82
+#: ../page-template-portfolio.php:171
+#: ../page.php:41
+msgid "Edit this page"
+msgstr "Редактировать страницу"
+
+#: ../page-contact.php:19
+msgid "Make sure you entered the captcha. "
+msgstr ""
+
+#: ../page-contact.php:22
+msgid "Numbers regenerated."
+msgstr ""
+
+#: ../page-contact.php:23
+msgid "You entered the wrong number in captcha. "
+msgstr ""
+
+#: ../page-contact.php:32
+msgid "Make sure you fill all fields. "
+msgstr ""
+
+#: ../page-contact.php:37
+msgid "Invalid Email. "
+msgstr ""
+
+#: ../page-contact.php:58
+msgid "Thanks for contacting us"
+msgstr ""
+
+#: ../page-contact.php:107
+msgid "Name"
+msgstr "Имя"
+
+#: ../page-contact.php:111
+msgid "Email Address"
+msgstr ""
+
+#: ../page-contact.php:115
+#, fuzzy
+msgid "Subject"
+msgstr "Оставить комментарий"
+
+#: ../page-contact.php:122
+msgid "Captcha: "
+msgstr ""
+
+#: ../page-contact.php:138
+msgid "Reset"
+msgstr ""
+
+#: ../page-contact.php:139
+#: ../page-search.php:87
+#, fuzzy
+msgid "Submit"
+msgstr "Оставить комментарий"
+
+#: ../page-gallery.php:76
+#: ../page-template-portfolio.php:122
+msgid "Zoom in"
+msgstr ""
+
+#: ../page-gallery.php:77
+#: ../page-template-portfolio.php:123
+#, fuzzy
+msgid "Read more"
+msgstr "Далее"
+
+#: ../page-login.php:55
+msgid "Username"
+msgstr ""
+
+#: ../page-login.php:56
+msgid "Password"
+msgstr ""
+
+#: ../page-login.php:60
+msgid "Not a member?"
+msgstr ""
+
+#: ../page-login.php:60
+msgid "Register today!"
+msgstr ""
+
+#: ../page-search.php:53
+msgid "search this website"
+msgstr ""
+
+#: ../page-search.php:56
+msgid "search this site..."
+msgstr ""
+
+#: ../page-search.php:58
+#, fuzzy
+msgid "Posts"
+msgstr "Опубликовано"
+
+#: ../page-search.php:62
+msgid "Select a month"
+msgstr ""
+
+#: ../page-sitemap.php:57
+msgid "Categories"
+msgstr ""
+
+#: ../page-sitemap.php:62
+#, fuzzy
+msgid "Tags"
+msgstr "Страницы"
+
+#: ../page-sitemap.php:74
+msgid "Authors"
+msgstr ""
+
+#: ../searchform.php:4
+msgid "Search"
+msgstr "Искать"
+
+#: ../sidebar.php:3
+msgid "about us"
+msgstr "о нас"
+
+#: ../sidebar.php:13
+msgid "random posts"
+msgstr "случайные посты"
+
+#: ../sidebar.php:47
+msgid "recent comments"
+msgstr "послед. комментарии"
+
+#: ../includes/navigation.php:2
+msgid "&laquo; Older Entries"
+msgstr "&laquo; Предыдущие Записи"
+
+#: ../includes/navigation.php:3
+msgid "Next Entries &raquo;"
+msgstr "Следующие Записи &raquo;"
+
+#: ../includes/no-results.php:2
+msgid "No Results Found"
+msgstr "Ничего не найдено"
+
+#: ../includes/no-results.php:3
+msgid "The page you requested could not be found. Try refining your search, or use the navigation above to locate the post."
+msgstr "Запрашиваемая страница не найдена. Попробуйте уточнить параметры поиска или используйте меню для нахождения страницы."
+
+#: ../includes/functions/comments.php:14
+msgid "(Edit)"
+msgstr "(Ред.)"
+
+#: ../includes/functions/comments.php:21
+msgid "Your comment is awaiting moderation."
+msgstr "Ваш комментарий ожидает модерации."
+
+#: ../includes/functions/comments.php:26
+msgid "Reply"
+msgstr "Ответить"
+
+#~ msgid "You must be"
+#~ msgstr "Вы должны быть"
+#~ msgid "logged in"
+#~ msgstr "зарегистрированы"
+#~ msgid "to post a comment."
+#~ msgstr "чтобы комментировать."
+#~ msgid "Logged in as"
+#~ msgstr "Вы вошли как"
+#~ msgid "Log out &raquo;"
+#~ msgstr "Выйти &raquo;"
+#~ msgid "(required)"
+#~ msgstr "(обязательное поле)"
+#~ msgid "Mail (will not be published)"
+#~ msgstr "Мэйл (не будет виден посетителям)"
+#~ msgid "Website"
+#~ msgstr "Сайт"
+#~ msgid "Enter your password to view comments."
+#~ msgstr "Введите пароль для просмотра комментариев."
+#~ msgid "No Comments"
+#~ msgstr "Нет комментариев"
+#~ msgid "1 Comment"
+#~ msgstr "Один комментарий"
+#~ msgid "% Comments"
+#~ msgstr "% коммент."
+#~ msgid "Leave a comment"
+#~ msgstr "Оставить комментарий"
+#~ msgid "No comments yet."
+#~ msgstr "Пока нет комментариев."
+#~ msgid ""
+#~ "<abbr title=\"Really Simple Syndication\">RSS</abbr> feed for comments on "
+#~ "this post."
+#~ msgstr ""
+#~ "<abbr title=\"Really Simple Syndication\">RSS</abbr> подписка на этот "
+#~ "пост."
+#~ msgid "TrackBack <abbr title=\"Universal Resource Locator\">URL</abbr>"
+#~ msgstr "Трэкбэк <abbr title=\"Universal Resource Locator\">URL</abbr> "
+#~ msgid "You must be <a href=\"%s\">logged in</a> to post a comment."
+#~ msgstr ""
+#~ "Вы должны быть <a href=\"%s\">зарегистрированы</a> чтобы комментировать."
+#~ msgid "Logged in as %s."
+#~ msgstr "Вы вошли как %s."
+#~ msgid "Log out of this account"
+#~ msgstr "Выйти"
+#~ msgid "You can use these tags: %s"
+#~ msgstr "Вы можете использовать эти тэги: %s "
+#~ msgid "Sorry, the comment form is closed at this time."
+#~ msgstr "В данный момент комментарии закрыты."
+
