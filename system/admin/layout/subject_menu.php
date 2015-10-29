@@ -1,2 +1,0 @@
-<a href="idxsubject.php"><button type="button" class="btn btn-success"><span class="glyphicon glyphicon-list"></span> Mata kuliah</button></a>
-<a href="addsubject.php"><button type="button" class="btn btn-success"><span class="glyphicon glyphicon-plus-sign"></span> Mata kuliah</button></a>

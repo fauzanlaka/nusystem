@@ -1,4 +1,0 @@
-This is a reduced set of the FontAwesome font icon.
-
-Icon Set:	Font Awesome -- http://fortawesome.github.com/Font-Awesome/
-License:	GPL

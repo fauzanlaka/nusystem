@@ -4,7 +4,7 @@
     $register = mysqli_query($con, "SELECT * FROM student_register WHERE st_id='$id'");
 ?>
 <br>
-    <h4><span class="glyphicon glyphicon-tags"></span> Hasil perkliahan</h4>
+    <h4><span class="glyphicon glyphicon-tags"></span> Hasil perkuliahan</h4>
     <hr>
     <?php
         //Get all registeration , order by year

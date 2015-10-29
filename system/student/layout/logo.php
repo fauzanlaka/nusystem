@@ -1,1 +1,0 @@
-<p align="left"><img src="images/LOGO_JISDA_WEB.png" class="img-rounded"></p>
