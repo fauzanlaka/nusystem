@@ -15,7 +15,10 @@ if($cpage == NULL){
             include 'module/child/main.php';
             break;
         case 'childAdd':
-            include 'module/child/childAdd/childAdd.php';
+            include 'module/child/childAdd/add.php';
+            break;
+        case 'step1':
+            include 'module/child/childAdd/step1.php';
             break;
         case 'childList':
             include 'module/child/childList/childList.php';

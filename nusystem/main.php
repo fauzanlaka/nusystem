@@ -83,6 +83,8 @@
         <script type="text/javascript" src="function/checkuser.js"></script>
         <script src="ng/angular.min.js"></script>
         <script src="select/dist/js/bootstrap-select.js"></script>
+        <script type="text/javascript" src="script/jquery-1.3.2.min.js"></script>
+        <script type="text/javascript" src="script/script.js"></script>
     </body>
 </html>
 <?

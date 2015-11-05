@@ -33,22 +33,19 @@
                 <div class="panel panel-default">
                 <div class="panel-body">
                     <div class="page-header">
-                        <h3>MAHASISWA JISDA</h3>
+                        <h3>เข้าสู่ระบบ</h3>
                     </div>
                         <form role="form" method="POST" action="<?php Echo($_SERVER['PHP_SELF']); ?>">
                         <div class="form-group">
-                            <label for="exampleInputEmail1">
-                                Username</label>
                             <div class="input-group">
                                 <span class="input-group-addon"><span class="glyphicon glyphicon-user"></span></span>
-                                <input type="text" class="form-control" placeholder="Nomor pokok" name="txtUsername" required>
+                                <input type="text" class="form-control" placeholder="ชื่อผู้ใช้" name="txtUsername" required>
                             </div>
                         </div>
                         <div class="form-group">
-                            <label for="exampleInputPassword1">Password</label>
                             <div class="input-group">
                                 <span class="input-group-addon"><span class="glyphicon glyphicon-lock"></span></span>
-                                <input type="password" class="form-control" placeholder="Password" name="txtPassword" required >
+                                <input type="password" class="form-control" placeholder="รหัสผ่าน" name="txtPassword" required >
                             </div>
                         </div>
                         <a href="index.php">
