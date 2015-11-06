@@ -21,13 +21,12 @@
     
     if($rowIdCard[0] > 0){
 ?>        
-<br>
 <div class="alert alert-dismissible alert-danger">
   <button type="button" class="close" data-dismiss="alert">x</button>
   <strong>ข้อมูลบุคคลนี้มีอยู่ในระบบแล้ว</strong>
 </div>
 <?php
-    include 'module/child/childAdd/help/step1.php';
+    include 'module/child/childAdd/step1.php';
     }else{
     
     $insert = mysqli_query($con, "INSERT INTO childs

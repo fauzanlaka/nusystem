@@ -1,12 +1,19 @@
-<br>
-<div class="pull-left"><a href="?page=child&&cpage=childAdd">เพิ่มข้อมูลเด็ก ></a> <b><a>เด็กกำพร้า</a></b></div>
-<div class="pull-right"><font color="red">ขั้นตอนที่ <b>1</b> จาก <b>3</b></font></div>
-<br>
-
-    <div class="panel panel-primary">
+  <div class="panel panel-primary">
         <div class="panel-body">
-            <div class="scrollbar" id="style-3">
-                <font color="gray"><b>1.ข้อมูลส่วนตัว</b></font><hr>
+            <h4>
+                <div class="pull-left">
+                    <span class="glyphicon glyphicon-plus-sign"></span> เพิ่มข้อมูลเด็กกำพร้า
+                </div>
+                <div class="pull-right">
+                    <a href="?page=child&&cpage=step1&&type=orphan"><button type="button" class="btn btn-success btn-sm">เพิ่มข้มูลใหม่</button></a>
+                    <a href="?page=child&&cpage=step1&&type=orphan"><button type="button" class="btn btn-success btn-sm">ข้อมูลทั้งหมด</button></a>
+                </div>
+            </h4><br><br>
+            
+            <div class="pull-right"><font color="red">ขั้นตอนที่ 1 จาก 3</font></div> 
+            <div class="pull-left"><font color="gray"><b>1.ข้อมูลส่วนตัว</b></font></div>
+            <hr>    
+            
                 <form class="form-horizontal" action="?page=child&&cpage=step1Save" enctype="multipart/form-data" method="post">
                 
                     <div class="form-group">
@@ -148,5 +155,4 @@
                 </form>
                 
             </div>
-    </div>    
-</div>
+    </div>

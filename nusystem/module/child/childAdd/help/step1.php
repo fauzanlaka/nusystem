@@ -1,5 +1,3 @@
-<p><a href="?page=child&&cpage=childAdd">เพิ่มข้อมูลเด็ก ></a> <b><a>เด็กกำพร้า</a></b></p>
-
     <div class="panel panel-primary">
         <div class="panel-body">
             <div class="scrollbar" id="style-3">
@@ -143,5 +141,5 @@
                 </form>
                 
             </div>
-    </div>    
+    </div>  
 </div>

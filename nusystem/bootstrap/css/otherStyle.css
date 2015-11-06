@@ -36,7 +36,7 @@ a{
 .scrollbar
 {
 	float: left;
-	height: 450px;
+	height: 100%;
 	width: 100%;
 	overflow-y: scroll;
 }
