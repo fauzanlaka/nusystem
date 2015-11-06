@@ -17,6 +17,9 @@ if($cpage == NULL){
         case 'childAdd':
             include 'module/child/childAdd/add.php';
             break;
+        case 'step1Save':
+            include 'module/child/childAdd/function/step1Save.php';
+            break;
         case 'step1':
             include 'module/child/childAdd/step1.php';
             break;

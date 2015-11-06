@@ -1,7 +1,4 @@
-<br>
-<div class="pull-left"><a href="?page=child&&cpage=childAdd">เพิ่มข้อมูลเด็ก ></a> <b><a>เด็กกำพร้า</a></b></div>
-<div class="pull-right"><font color="red">ขั้นตอนที่ <b>1</b> จาก <b>3</b></font></div>
-<br>
+<p><a href="?page=child&&cpage=childAdd">เพิ่มข้อมูลเด็ก ></a> <b><a>เด็กกำพร้า</a></b></p>
 
     <div class="panel panel-primary">
         <div class="panel-body">
@@ -23,12 +20,11 @@
                     <div class="form-group">
                       <label for="inputEmail" class="col-lg-2 control-label">เลขบัตรประชาชน </label>
                       <div class="col-lg-3">
-                        <input type="text" class="form-control input-sm" maxlength="13" name="idCard" placeholder="เลขบัตรประชาชน" id="idCard" required>
-                        <span class="idCard_avail_result" id="idCard_avail_result"></span>
+                        <input type="text" class="form-control input-sm" maxlength="13" name="idCard" placeholder="เลขบัตรประชาชน" required>
                       </div>
                       <label for="inputEmail" class="col-lg-2 control-label">วดป เกิด </label>
                       <div class="col-lg-3">
-                        <input type="date" class="form-control input-sm" name="bDate" required>
+                        <input type="date" class="form-control input-sm" maxlength="14" name="birdthDate" required>
                       </div>
                     </div>
 
@@ -115,22 +111,21 @@
                   
                     <div id='TextBoxesGroup'>
                         <div id="TextBoxDiv1">
-                            <div class="form-group">
-                                   <input type="hidden" id='textbox1' id="part_id" name="part_id[]" class='form-control input-sm' placeholder='ชื่อ-นามสกุล'>
+                            <div class="form-group">    
                                     <div class='col-lg-2'>
-                                        <input type='text' id="fullName" name="fullName[]" class='form-control input-sm' placeholder='ชื่อ-นามสกุล'>
+                                        <input type='text' id='textbox1' name="fullName" class='form-control input-sm' placeholder='ชื่อ-นามสกุล'>
                                     </div>
                                     <div class='col-lg-2'>
-                                        <input type='date' id="birthDate" name="birdthDate[]" class='form-control input-sm' placeholder='วดป เกิด'>
+                                        <input type='date' id='textbox1' name="birthDate" class='form-control input-sm' placeholder='วดป เกิด'>
                                     </div>
                                     <div class='col-lg-2'>
-                                        <input type='text' id="education" name="education[]" class='form-control input-sm' placeholder='ระดับการศึกษา'>
+                                        <input type='text' id='textbox1' name="education" class='form-control input-sm' placeholder='ระดับการศึกษา'>
                                     </div>
                                     <div class='col-lg-2'>
-                                        <input type='text' id="job" name="job[]" class='form-control input-sm' placeholder='อาชีพ'>
+                                        <input type='text' id='textbox1' name="job" class='form-control input-sm' placeholder='อาชีพ'>
                                     </div>
                                     <div class='col-lg-2'>
-                                        <input type='text' id="telephone" name="telephone[]" class='form-control input-sm' placeholder='เบอร์โทรศัพท์'>
+                                        <input type='text' id='textbox1' name="telephone" class='form-control input-sm' placeholder='เบอร์โทรศัพท์'>
                                     </div>
                                     <div class='col-lg-2'>
                                         <button type='button' class="btn btn-success btn-sm" id='addButton'>+</button>

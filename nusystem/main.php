@@ -85,6 +85,7 @@
         <script src="select/dist/js/bootstrap-select.js"></script>
         <script type="text/javascript" src="script/jquery-1.3.2.min.js"></script>
         <script type="text/javascript" src="script/script.js"></script>
+        <script type="text/javascript" src="function/function.js"></script>
     </body>
 </html>
 <?
