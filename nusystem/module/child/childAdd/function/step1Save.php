@@ -57,5 +57,8 @@
 
                 }
         }
+?>
+        <meta http-equiv="refresh" content="0; url=?page=child&&cpage=step2&&id=<?= $c_id ?>">
+<?php
     }
 ?>

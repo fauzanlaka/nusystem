@@ -1,5 +1,4 @@
-<div class="panel panel-primary">
-    <div class="panel-body">
+
         <div class="pull-right">
                 <div class="dropdown">
                 <button class="btn btn-success btn-sm dropdown-toggle" type="button" data-toggle="dropdown">เพิ่มใหม่
@@ -11,6 +10,3 @@
                     </ul>
                 </div>
         </div>
-            
-    </div>   
-</div>

@@ -1,12 +1,12 @@
-  <div class="panel panel-primary">
-        <div class="panel-body">
+<?php
+    $id = $_GET['id'];
+?>
             <h4>
                 <div class="pull-left">
                     <span class="glyphicon glyphicon-plus-sign"></span> เพิ่มข้อมูลเด็กกำพร้า
                 </div>
                 <div class="pull-right">
-                    <a href="?page=child&&cpage=step1&&type=orphan"><button type="button" class="btn btn-success btn-sm">เพิ่มข้มูลใหม่</button></a>
-                    <a href="?page=child&&cpage=step1&&type=orphan"><button type="button" class="btn btn-success btn-sm">ข้อมูลทั้งหมด</button></a>
+                    <a href="?page=child&&cpage=index"><button type="button" class="btn btn-success btn-sm">ข้อมูลทั้งหมด</button></a>
                 </div>
             </h4><br><br>
             
@@ -125,7 +125,7 @@
                             <div class="form-group">
                                    <input type="hidden" id='textbox1' id="part_id" name="part_id[]" class='form-control input-sm' placeholder='ชื่อ-นามสกุล'>
                                     <div class='col-lg-2'>
-                                        <input type='text' id="fullName" name="fullName[]" class='form-control input-sm' placeholder='ชื่อ-นามสกุล'>
+                                        <input type='text' id="fullName" name="fullName[]" class='form-control input-sm' placeholder='ชื่อ-นามสกุล' required>
                                     </div>
                                     <div class='col-lg-2'>
                                         <input type='date' id="birthDate" name="birdthDate[]" class='form-control input-sm' placeholder='วดป เกิด'>
@@ -147,12 +147,11 @@
                         </div> 
                     </div>
     
+                    <input type='hidden' name='id' value='<?= $id ?>'>
                     <p class="text-center">
                         <button type="reset" class="btn btn-success btn-sm">ยกเลิก</button>
                         <button type="submit" class="btn btn-success btn-sm">ถัดไป <span class='glyphicon glyphicon-chevron-right'></span></button>
                     </p>
                     
                 </form>
-                
-            </div>
-    </div>
+
