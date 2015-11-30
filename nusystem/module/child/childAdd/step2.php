@@ -1,3 +1,6 @@
+<?php
+    $id = $_GET['id'];
+?>
 <h4>
     <div class="pull-left">
         <span class="glyphicon glyphicon-plus-sign"></span> เพิ่มข้อมูลเด็กกำพร้า
@@ -181,10 +184,10 @@
         </label>
     </div>
 <br>
-
+    <input type='hidden' name='id' value='<?= $id ?>'>
     <p class="text-center">
         <button type="reset" class="btn btn-success btn-sm">ยกเลิก</button>
         <button type="submit" class="btn btn-success btn-sm">ถัดไป <span class='glyphicon glyphicon-chevron-right'></span></button>
     </p>
 
-</form>    
+</form>

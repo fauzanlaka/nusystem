@@ -1,4 +1,5 @@
 <?php
+    echo "<b>"."กำลังบันทึกข้อมูล กรุณารอสักครู่..."."</b>";
     //Childs's data
     $fName = mysqli_real_escape_string($con, $_POST['fName']);
     $lName = mysqli_real_escape_string($con, $_POST['lName']);

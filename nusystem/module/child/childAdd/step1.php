@@ -1,6 +1,4 @@
-<?php
-    $id = $_GET['id'];
-?>
+
             <h4>
                 <div class="pull-left">
                     <span class="glyphicon glyphicon-plus-sign"></span> เพิ่มข้อมูลเด็กกำพร้า
@@ -53,11 +51,11 @@
                     <div class="form-group">
                       <label for="inputEmail" class="col-lg-2 control-label">เบอร์รองเท้า </label>
                       <div class="col-lg-2">
-                        <input type="number" class="form-control input-sm"  name="shoeSize" placeholder="เบอร์รองเท้า">
+                        <input type="text" class="form-control input-sm"  name="shoeSize" placeholder="เบอร์รองเท้า">
                       </div>
                       <label for="inputEmail" class="col-lg-3 control-label">ขนาดเสือ้ </label>
                       <div class="col-lg-2">
-                        <input type="number" class="form-control input-sm"  name="shirtSize" placeholder="ขนาดเสือ้">
+                        <input type="text" class="form-control input-sm"  name="shirtSize" placeholder="ขนาดเสือ้">
                       </div>
                     </div>
 
@@ -147,7 +145,6 @@
                         </div> 
                     </div>
     
-                    <input type='hidden' name='id' value='<?= $id ?>'>
                     <p class="text-center">
                         <button type="reset" class="btn btn-success btn-sm">ยกเลิก</button>
                         <button type="submit" class="btn btn-success btn-sm">ถัดไป <span class='glyphicon glyphicon-chevron-right'></span></button>

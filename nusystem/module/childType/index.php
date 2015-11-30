@@ -1,3 +1,4 @@
+<!-- 
 <div class="btn-group btn-group-justified">
   <a href="?page=childType&&ctpage=index" class="btn btn-default"><span class="glyphicon glyphicon-home"></span> หน้าหลัก</a>
   <a href="?page=childType&&ctpage=child" class="btn btn-default"><span class="glyphicon glyphicon-plus-sign"></span> ประเภทเด็ก</a>
@@ -5,6 +6,27 @@
   <a href="?page=childType&&ctpage=childList" class="btn btn-default"><span class="glyphicon glyphicon-list"></span> ประเภทเด็ก</a>
   <a href="?page=childType&&ctpage=projectList" class="btn btn-default"><span class="glyphicon glyphicon-list"></span> ประเภทโครงการ</a>
 </div>
+-->
+<div class="pull-right">
+    <div class="btn-group">
+        <button class="btn btn-success btn-sm"><span class="glyphicon glyphicon-plus-sign"></span> เพิ่มใหม่</button>
+      <button data-toggle="dropdown" class="btn btn-success btn-sm dropdown-toggle" data-placeholder="false"><span class="caret"></span></button>
+        <ul class="dropdown-menu">
+          <li><a href="?page=childType&&ctpage=child">ประเภทเด็ก</a></li>
+          <li><a href="?page=childType&&ctpage=project">ประเภทโครงการ</a></li>
+          <!-- Other items -->
+        </ul>
+    </div>
+        <div class="btn-group">
+            <button class="btn btn-success btn-sm"><span class="glyphicon glyphicon-list"></span> รายละเอียด</button>
+      <button data-toggle="dropdown" class="btn btn-success btn-sm dropdown-toggle" data-placeholder="false"><span class="caret"></span></button>
+        <ul class="dropdown-menu">
+          <li><a href="?page=childType&&ctpage=childList">ประเภทเด็ก</a></li>
+          <li><a href="?page=childType&&ctpage=projectList">ประเภทโครงการ</a></li>
+          <!-- Other items -->
+        </ul>
+    </div>
+</div><br>
 <?php
 
 $ctpage = $_GET['ctpage']; // To get the page
