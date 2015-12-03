@@ -1,3 +1,23 @@
+<div class="pull-right">
+    <div class="btn-group">
+        <button class="btn btn-success btn-sm"><span class="glyphicon glyphicon-plus-sign"></span> เพิ่มใหม่</button>
+      <button data-toggle="dropdown" class="btn btn-success btn-sm dropdown-toggle" data-placeholder="false"><span class="caret"></span></button>
+        <ul class="dropdown-menu">
+            <li><a href="?page=child&&cpage=step1">เด็กกำพร้า</a></li>
+            <li><a href="?page=child&&cpage=index">เด็กยากจน</a></li>
+        </ul>
+    </div>
+      <div class="btn-group">
+          <a href="?page=child&&cpage=index" class="btn btn-success btn-sm"><span class="glyphicon glyphicon-list"></span> รายชื่อ</button></a>
+      <button data-toggle="dropdown" class="btn btn-success btn-sm dropdown-toggle" data-placeholder="false"><span class="caret"></span></button>
+        <ul class="dropdown-menu">
+          <li><a href="#">เด็กกำพร้า</a></li>
+          <li><a href="#">เด็กยากจน</a></li>
+          <!-- Other items -->
+        </ul>
+    </div>
+</div>
+
 <?php
 
 $cpage = $_GET['cpage']; // To get the page
@@ -32,6 +52,12 @@ if($cpage == NULL){
             break;
         case 'childList':
             include 'module/child/childList/childList.php';
+            break;
+        case 'edit':
+            include 'module/child/childEdit/edit.php';
+            break;
+        case 'delete':
+            include 'module/child/childEdit/function/delete.php';
             break;
     }				
 ?>

@@ -15,25 +15,52 @@
     $sonNumber = mysqli_real_escape_string($con, $_POST['sonNumber']);
     $menBrethren = mysqli_real_escape_string($con, $_POST['menBrethren']);
     $womenBrethren = mysqli_real_escape_string($con, $_POST['womenBrethren']);
-    echo $b_birdthDate;
+    
+    //--------------------------------------------------------------------------
+    //Code creat system
+    $code = "SELECT max(c_code) AS mx FROM childs";
+
+    $record = mysqli_query($con, $code) or die(mysqli_error());
+
+    $row = mysqli_fetch_assoc($record);
+
+    $mem_old = $row['mx'];// gives the highest id
+    
+    //Get current year
+    $y = date('Y');
+    $tmpy=substr($y,2);
+    //echo $mem_old;
+    $tmp1=substr($mem_old,0,3);//จะได้เฉพาะตัวแรกที่เป็นตัวอักษร
+    $tmp2=substr($mem_old,3,10);//ตัวเลขที่เหลือ
+    $tmp3=$tmp2+1;//จริงๆ เอาไปรวมกับตัว $tmp2 เลยก็ได้ค่ะ แต่ว่ากลัวงง ก็เลยแยกไว้ให้
+    
+    echo "<br>";
+    echo $tmp3;
+
+    //อันนี้ใช้ BP(buffalo power) ไปนิดนึง ปรับไปใช้ loop มาช่วยก็ได้นะคะ
+    if($tmp3 <= 9){$tmp4 = 'O'.$tmpy.'000000'.$tmp3;}
+    if($tmp3 > 9 && $tmp3 <= 99){$tmp4 = 'O'.$tmpy.'00000'.$tmp3;}
+    echo "<br>";
+    echo $tmp4;
+    //--------------------------------------------------------------------------
+    
     //Existing data checking
     $exist = mysqli_query($con, "SELECT * FROM childs WHERE c_idCard='$idCard'");
     $rowIdCard = mysqli_fetch_array($exist);
     
     if($rowIdCard[0] > 0){
-?>        
-<div class="alert alert-dismissible alert-danger">
-  <button type="button" class="close" data-dismiss="alert">x</button>
-  <strong>ข้อมูลบุคคลนี้มีอยู่ในระบบแล้ว</strong>
-</div>
+?>  
+<script>
+    alert("ข้อมูลบุคคลนี้มีอยู่ในระบบเเล้ว");
+</script>
+<meta http-equiv="refresh" content="0; url=?page=child&&cpage=step1">
 <?php
-    include 'module/child/childAdd/step1.php';
     }else{
     
     $insert = mysqli_query($con, "INSERT INTO childs
-                           (c_fName,c_lName,c_idCard,c_birdthDate,c_wieght,c_hieght,c_shoeSize,c_shirtSize,c_bloodType,c_disease,c_brethren,c_sonNumber,menBrethren,womenBrethren)
+                           (c_fName,c_lName,c_idCard,c_birdthDate,c_wieght,c_hieght,c_shoeSize,c_shirtSize,c_bloodType,c_disease,c_brethren,c_sonNumber,menBrethren,womenBrethren,c_code)
                            VALUES
-                           ('$fName','$lName','$idCard','$bDate','$wieght','$hieght','$shoeSize','$shirtSize','$bloodType','$diseases','$brethren','$sonNumber','$menBrethren','$womenBrethren')
+                           ('$fName','$lName','$idCard','$bDate','$wieght','$hieght','$shoeSize','$shirtSize','$bloodType','$diseases','$brethren','$sonNumber','$menBrethren','$womenBrethren','$tmp4')
                           ");
     $child = mysqli_query($con, "SELECT * FROM childs WHERE c_id = (SELECT MAX(c_id) FROM childs)");
     $rowChild = mysqli_fetch_array($child);
@@ -59,6 +86,7 @@
                 }
         }
 ?>
+        
         <meta http-equiv="refresh" content="0; url=?page=child&&cpage=step2&&id=<?= $c_id ?>">
 <?php
     }
