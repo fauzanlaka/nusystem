@@ -59,5 +59,8 @@ if($cpage == NULL){
         case 'delete':
             include 'module/child/childEdit/function/delete.php';
             break;
+        case 'edit1':
+            include 'module/child/childEdit/function/edit1.php';
+            break;
     }				
 ?>
