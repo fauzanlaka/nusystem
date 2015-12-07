@@ -107,7 +107,7 @@ $list = '';
             โครงการ : <?= $rowChilds['cp_name'] ?><br>
       </td>
       <td align="right">
-          <h4><a href="?page=child&&cpage=edit&&id=<?= $rowChilds['c_id'] ?>"><span class="glyphicon glyphicon-edit"></span></a> | <a href="?page=child&&cpage=delete&&id=<?= $rowChilds['c_id'] ?>"><span class="glyphicon glyphicon-trash"></span></a></h4>
+          <h4><a href="?page=child&&cpage=edit&&id=<?= $rowChilds['c_id'] ?>"><span class="glyphicon glyphicon-edit"></span></a> | <a href="?page=child&&cpage=delete&&id=<?= $rowChilds['c_id'] ?>" onclick="return confirm('คุณเเน่ใจหรือไม่ว่าจะลบข้อมูลนี้ ?');"><span class="glyphicon glyphicon-trash"></span></a></h4>
       </td>
     </tr>
     <?php

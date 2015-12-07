@@ -1,4 +1,7 @@
 <?php
+    echo "<b>"."กำลังบันทึกข้อมูล กรุณารอสักครู่"."</b>";
+    echo "<br>";
+    
     $id = $_POST['id'];
     $c_fatherName = mysqli_real_escape_string($con, $_POST['c_fatherName']);
     $c_fatherLname = mysqli_real_escape_string($con, $_POST['c_fatherLname']);
@@ -56,6 +59,9 @@
                                        WHERE c_id='$id'
                                        ");
                 echo "<b>"."บันทึกข้อมูลเรียบร้อยเเล้ว"."</b>";
+?>
+                <meta http-equiv="refresh" content="0; url=?page=child&&cpage=index">
+<?php
                 }else{
                     echo "<b>"."เกิดข้อมผิดพลาดระหว่างอัพโหลดรูปภาพ กรุณาลองอีกครั้ง"."</b>";
                 }
@@ -85,6 +91,9 @@
                                        WHERE c_id='$id'
                                        ");
                 echo "<b>"."บันทึกข้อมูลเรียบร้อบเเล้ว"."</b>";
+?>
+                <meta http-equiv="refresh" content="0; url=?page=child&&cpage=index">      
+<?php
             }
     }
 
