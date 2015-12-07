@@ -62,5 +62,17 @@ if($cpage == NULL){
         case 'edit1':
             include 'module/child/childEdit/function/edit1.php';
             break;
+        case 'edit2':
+            include 'module/child/childEdit/function/edit2.php';
+            break;
+        case 'edit3':
+            include 'module/child/childEdit/function/edit3.php';
+            break;
+        case 'edit4':
+            include 'module/child/childEdit/function/edit4.php';
+            break;
+        case 'bdel':
+            include 'module/child/childEdit/function/bdel.php';
+            break;
     }				
 ?>

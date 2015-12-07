@@ -1,6 +1,8 @@
 <?php
-    echo "<b>"."กำลังบันทึกข้อมูล กรุณารอสักครู่..."."</b>";
+    echo "<b>"."กำลังบันทึกการแก้ไขข้อมูล กรุณารอสักครู่..."."</b>";
+
     $id = $_POST['id'];
+    
     $generalSchool = mysqli_real_escape_string($con, $_POST['generalSchool']);
     $generalEucationLevel = mysqli_real_escape_string($con, $_POST['generalEucationLevel']);
     $generalSchoolSubdistrict = mysqli_real_escape_string($con, $_POST['generalSchoolSubdistrict']);
@@ -10,7 +12,6 @@
     $relegionSchool = mysqli_real_escape_string($con, $_POST['relegionSchool']);
     $relegionEucationLevel = mysqli_real_escape_string($con, $_POST['relegionEucationLevel']);
     $relegionSchoolSubdistrict = mysqli_real_escape_string($con, $_POST['relegionSchoolSubdistrict']);
-    $relegionSchoolDistrict = mysqli_real_escape_string($con, $_POST['relegionSchoolDistrict']);
     $relegionSchoolprovince = mysqli_real_escape_string($con, $_POST['relegionSchoolprovince']);
     $relegionSchoolPost = mysqli_real_escape_string($con, $_POST['relegionSchoolPost']);
     $copoiesHouseNumber = mysqli_real_escape_string($con, $_POST['copoiesHouseNumber']);
@@ -29,35 +30,35 @@
     $post = mysqli_real_escape_string($con, $_POST['post']);
     $status = mysqli_real_escape_string($con, $_POST['status']);
     
-    $INSERT = mysqli_query($con, "UPDATE childs SET
-                          c_generalSchool='$generalSchool',
-                          c_generalEucationLevel='$generalEucationLevel',
-                          c_generalSchoolSubdistrict='$generalSchoolSubdistrict',
-                          c_generalSchoolDistrict='$generalSchoolDistrict',
-                          c_generalSchoolprovince='$generalSchoolprovince',
-                          c_generalSchoolPost='$generalSchoolPost',
-                          c_relegionSchool='$relegionSchool',
-                          c_relegionEucationLevel='$relegionEucationLevel',
-                          c_relegionSchoolSubdistrict='$relegionSchoolSubdistrict',
-                          c_relegionSchoolDistrict='$relegionSchoolDistrict',
-                          c_relegionSchoolprovince='$relegionSchoolprovince',
-                          c_relegionSchoolPost='$relegionSchoolPost',
-                          c_copoiesHouseNumber='$copoiesHouseNumber',
-                          c_copiesPlaceNumber='$copiesPlaceNumber',
-                          c_copiesVillage='$copiesVillage',
-                          c_copiesSubdistrict='$copiesSubdistrict',
-                          c_copiesDistrict='$copiesDistrict',
-                          c_copiesProvince='$copiesProvince',
-                          c_copiesPost='$copiesPost',
-                          c_houseNumber='$houseNumber',
-                          c_placeNumber='$placeNumber',
-                          c_village='$village',
-                          c_subdistrict='$subdistrict',
-                          c_district='$district',
-                          c_province='$province',
-                          c_post='$post',
-                          c_status='$status'
-                          WHERE c_id='$id'
-                          ");
+    $UPDATE = mysqli_query($con, "UPDATE childs SET
+                            c_generalSchool = '$generalSchool',
+                            c_generalEucationLevel = '$generalEucationLevel', 
+                            c_generalSchoolSubdistrict = '$generalSchoolSubdistrict',
+                            c_generalSchoolDistrict = '$generalSchoolDistrict',
+                            c_generalSchoolprovince = '$generalSchoolprovince',
+                            c_generalSchoolPost = '$generalSchoolPost',
+                            c_relegionSchool = '$relegionSchool',
+                            c_relegionEucationLevel = '$relegionEucationLevel',
+                            c_relegionSchoolSubdistrict = '$relegionSchoolSubdistrict',
+                            c_relegionSchoolprovince = '$relegionSchoolSubdistrict',
+                            c_relegionSchoolPost = '$relegionSchoolPost',
+                            c_copoiesHouseNumber = '$copoiesHouseNumber',
+                            c_copiesPlaceNumber = '$copiesPlaceNumber',
+                            c_copiesVillage = '$copiesVillage',
+                            c_copiesSubdistrict = '$copiesSubdistrict',
+                            c_copiesDistrict = '$copiesDistrict',
+                            c_copiesProvince = '$copiesProvince',
+                            c_copiesPost = '$copiesPost',
+                            c_houseNumber = '$houseNumber',
+                            c_placeNumber = '$placeNumber',
+                            c_village = '$village',
+                            c_subdistrict = '$subdistrict',
+                            c_district = '$district',
+                            c_province = '$province',
+                            c_post = '$post',
+                            c_status = '$status'
+                            WHERE c_id = '$id'
+                            ");
+echo $generalEucationLevel;
 ?>
-<meta http-equiv="refresh" content="0; url=?page=child&&cpage=step3&&id=<?= $id ?>">
+<meta http-equiv="refresh" content="0; url=?page=child&&cpage=edit&&tab=2&&id=<?= $id ?>">
