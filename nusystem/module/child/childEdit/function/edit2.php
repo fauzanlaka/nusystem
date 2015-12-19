@@ -12,6 +12,7 @@
     $relegionSchool = mysqli_real_escape_string($con, $_POST['relegionSchool']);
     $relegionEucationLevel = mysqli_real_escape_string($con, $_POST['relegionEucationLevel']);
     $relegionSchoolSubdistrict = mysqli_real_escape_string($con, $_POST['relegionSchoolSubdistrict']);
+    $relegionSchoolDistrict = mysqli_real_escape_string($con, $_POST['relegionSchoolDistrict']);
     $relegionSchoolprovince = mysqli_real_escape_string($con, $_POST['relegionSchoolprovince']);
     $relegionSchoolPost = mysqli_real_escape_string($con, $_POST['relegionSchoolPost']);
     $copoiesHouseNumber = mysqli_real_escape_string($con, $_POST['copoiesHouseNumber']);
@@ -29,6 +30,12 @@
     $province = mysqli_real_escape_string($con, $_POST['province']);
     $post = mysqli_real_escape_string($con, $_POST['post']);
     $status = mysqli_real_escape_string($con, $_POST['status']);
+    $generalSchoolClass = mysqli_real_escape_string($con, $_POST['generalSchoolClass']);
+    $generalSchoolTel = mysqli_real_escape_string($con, $_POST['generalSchoolTel']);
+    $relegionSchoolClass = mysqli_real_escape_string($con, $_POST['relegionSchoolClass']);
+    $relegionSchoolTel = mysqli_real_escape_string($con, $_POST['relegionSchoolTel']);
+    $copiesTel = mysqli_real_escape_string($con, $_POST['copiesTel']);
+    $tel = mysqli_real_escape_string($con, $_POST['tel']);
     
     $UPDATE = mysqli_query($con, "UPDATE childs SET
                             c_generalSchool = '$generalSchool',
@@ -40,7 +47,8 @@
                             c_relegionSchool = '$relegionSchool',
                             c_relegionEucationLevel = '$relegionEucationLevel',
                             c_relegionSchoolSubdistrict = '$relegionSchoolSubdistrict',
-                            c_relegionSchoolprovince = '$relegionSchoolSubdistrict',
+                            c_relegionSchoolDistrict = '$relegionSchoolDistrict',
+                            c_relegionSchoolprovince = '$relegionSchoolprovince',
                             c_relegionSchoolPost = '$relegionSchoolPost',
                             c_copoiesHouseNumber = '$copoiesHouseNumber',
                             c_copiesPlaceNumber = '$copiesPlaceNumber',
@@ -56,9 +64,16 @@
                             c_district = '$district',
                             c_province = '$province',
                             c_post = '$post',
-                            c_status = '$status'
+                            c_status = '$status',
+                            c_generalSchoolClass='$generalSchoolClass',
+                            c_generalSchoolTel='$generalSchoolTel',
+                            c_relegionSchoolClass='$relegionSchoolClass',
+                            c_relegionSchoolTel='$relegionSchoolTel',
+                            c_relegionSchoolTel='$relegionSchoolTel',
+                            c_copiesTel='$copiesTel',
+                            c_tel='$tel'
                             WHERE c_id = '$id'
                             ");
 echo $generalEucationLevel;
 ?>
-<meta http-equiv="refresh" content="0; url=?page=child&&cpage=edit&&tab=2&&id=<?= $id ?>">
+<meta http-equiv="refresh" content="0; url=?page=child&&cpage=edit_1&&tab=2&&id=<?= $id ?>">

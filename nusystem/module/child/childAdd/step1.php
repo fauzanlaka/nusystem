@@ -1,9 +1,8 @@
-
-            <h5>
+            <h4>
                 <div class="pull-left">
-                    <h5><span class="glyphicon glyphicon-plus-sign"></span> <b>เพิ่มข้อมูลเด็กกำพร้า</b></h5>
+                    <span class="glyphicon glyphicon-plus-sign"></span> <b>เพิ่มข้อมูลเด็กกำพร้า</b>
                 </div>
-            </h5><br><br>
+            </h4><br><br>
             
             <div class="pull-right"><font color="red">ขั้นตอนที่ 1 จาก 3</font></div> 
             <div class="pull-left"><font color="gray"><b>1.ข้อมูลส่วนตัว</b></font></div>
@@ -19,6 +18,20 @@
                       <label for="inputEmail" class="col-lg-2 control-label">นามสกุล</label>
                       <div class="col-lg-3">
                         <input type="text" class="form-control input-sm" name="lName" placeholder="สกุล" required>
+                      </div>
+                    </div>
+                    
+                    <div class="form-group">
+                      <label for="inputEmail" class="col-lg-2 control-label">ลงทะเบียนเมื่อ </label>
+                      <div class="col-lg-3">
+                        <input type="date" class="form-control input-sm"  name="regisDate" required>
+                      </div>
+                      <label for="inputEmail" class="col-lg-2 control-label">เพศ </label>
+                      <div class="col-lg-2">
+                          <select class='form-control input-sm' name='gender'>
+                              <option value='1'>ชาย</option>
+                              <option value='2'>หญิง</option>
+                          </select>
                       </div>
                     </div>
 
@@ -94,6 +107,46 @@
                         คน
                       </div>
                     </div>
+                    
+                    <div class="form-group">
+                        <label for="inputEmail" class="col-lg-2 control-label">ประเภทเด็กกำพร้า</label>
+                        <div class="col-lg-2">
+                            <select class="form-control input-sm" name="ct_id">
+                                <?php
+                                    $cType = mysqli_query($con, "SELECT * FROM childType WHERE ct_category='1'");
+                                    while($rowCType = mysqli_fetch_array($cType)){
+                                ?>
+                                <option value="<?= $rowCType['ct_id'] ?>"><?= $rowCType['ct_name'] ?></option>
+                                <?php
+                                    }
+                                ?>
+                            </select>
+                        </div>
+
+
+
+                        <label for="inputEmail" class="col-lg-3 control-label">ประเภทโครงการ</label>
+                        <div class="col-lg-2">
+                            <select class="form-control input-sm" name="cp_id">
+                                <?php
+                                    $cProject = mysqli_query($con, "SELECT * FROM childProject");
+                                    while($rowCProject = mysqli_fetch_array($cProject)){
+                                ?>
+                                <option value="<?= $rowCProject['cp_id'] ?>"><?= $rowCProject['cp_name'] ?></option>
+                                <?php
+                                    }
+                                ?>
+                            </select>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="inputEmail" class="col-lg-2 control-label">ลงทะเบียนเมื่อ </label>
+                        <div class="col-lg-2">
+                            <input type="date" class="form-control input-sm"  name="regisDate" required>
+                        </div>
+                   </div>
+                    
                     <br>
                     <font color="gray"><b>2.สมาชิกในครอบครัว:-</b></font><hr>
                     <div class="form-group">

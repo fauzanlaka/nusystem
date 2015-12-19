@@ -16,10 +16,14 @@
     $sonNumber = mysqli_real_escape_string($con, $_POST['sonNumber']);
     $menBrethren = mysqli_real_escape_string($con, $_POST['menBrethren']);
     $womenBrethren = mysqli_real_escape_string($con, $_POST['womenBrethren']);
+    $ct_id = $_POST['ct_id'];
+    $cp_id = $_POST['cp_id'];
+    $c_regisDate = $_POST['regisDate'];
+    $c_gender = $_POST['gender'];
     
     $UPDATE = mysqli_query($con, "UPDATE childs SET
                            c_fName = '$fName',
-                           c_lName = '$lname',
+                           c_lName = '$lName',
                            c_idCard = '$idCard',
                            c_birdthDate = '$bDate',
                            c_wieght = '$wieght',
@@ -31,7 +35,11 @@
                            c_brethren = '$brethren',
                            c_sonNumber = '$sonNumber',
                            menBrethren = '$menBrethren',
-                           womenBrethren = '$womenBrethren'
+                           womenBrethren = '$womenBrethren',
+                           ct_id = '$ct_id',
+                           cp_id = '$cp_id',
+                           c_regisDate = '$c_regisDate',
+                           c_gender = '$c_gender'
                            WHERE c_id='$c_id'
                           ");
     
@@ -56,4 +64,4 @@
             ++$i;
     }
 ?>
-<meta http-equiv="refresh" content="0; url=?page=child&&cpage=edit&&id=<?= $c_id ?>">
+<meta http-equiv="refresh" content="0; url=?page=child&&cpage=edit_1&&id=<?= $c_id ?>">

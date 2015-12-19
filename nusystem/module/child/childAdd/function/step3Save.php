@@ -22,8 +22,7 @@
     $c_pTelephone = mysqli_real_escape_string($con, $_POST['c_pTelephone']);
     $c_pStatus = mysqli_real_escape_string($con, $_POST['c_pStatus']);
     $c_pOtherStatus = mysqli_real_escape_string($con, $_POST['c_pOtherStatus']);
-    $ct_id = mysqli_real_escape_string($con, $_POST['ct_id']);
-    $cp_id = mysqli_real_escape_string($con, $_POST['cp_id']);
+    $c_familyStatus = mysqli_real_escape_string($con, $_POST['familyStatus']);
     
     //Making image rename
     $temp = explode(".", $_FILES["file"]["name"]);
@@ -54,8 +53,7 @@
                                        c_pStatus='$c_pStatus',
                                        c_pOtherStatus='$c_pOtherStatus',
                                        c_image='$newfilename',
-                                       ct_id='$ct_id',
-                                       cp_id='$cp_id'    
+                                       c_familyStatus='$c_familyStatus'
                                        WHERE c_id='$id'
                                        ");
                 echo "<b>"."บันทึกข้อมูลเรียบร้อยเเล้ว"."</b>";
@@ -85,9 +83,7 @@
                                        c_pRelation='$c_pRelation',
                                        c_pTelephone='$c_pTelephone',
                                        c_pStatus='$c_pStatus',
-                                       c_pOtherStatus='$c_pOtherStatus',
-                                       ct_id='$ct_id',
-                                       cp_id='$cp_id'    
+                                       c_pOtherStatus='$c_pOtherStatus'  
                                        WHERE c_id='$id'
                                        ");
                 echo "<b>"."บันทึกข้อมูลเรียบร้อบเเล้ว"."</b>";

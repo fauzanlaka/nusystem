@@ -22,8 +22,7 @@
     $c_pTelephone = mysqli_real_escape_string($con, $_POST['c_pTelephone']);
     $c_pStatus = mysqli_real_escape_string($con, $_POST['c_pStatus']);
     $c_pOtherStatus = mysqli_real_escape_string($con, $_POST['c_pOtherStatus']);
-    $ct_id = mysqli_real_escape_string($con, $_POST['ct_id']);
-    $cp_id = mysqli_real_escape_string($con, $_POST['cp_id']);
+    $c_familyStatus = mysqli_real_escape_string($con, $_POST['familyStatus']);
     
     //Making image rename
     $temp = explode(".", $_FILES["file"]["name"]);
@@ -54,12 +53,11 @@
                                        c_pStatus='$c_pStatus',
                                        c_pOtherStatus='$c_pOtherStatus',
                                        c_image='$newfilename',
-                                       ct_id='$ct_id',
-                                       cp_id='$cp_id'    
+                                       c_familyStatus = '$c_familyStatus'
                                        WHERE c_id='$id'
                                        ");
                 ?>
-                <meta http-equiv="refresh" content="0; url=?page=child&&cpage=edit&&tab=3&&id=<?= $id ?>">
+                <meta http-equiv="refresh" content="0; url=?page=child&&cpage=edit_1&&tab=3&&id=<?= $id ?>">
                 <?php
                 }else{
                     echo "<b>"."เกิดข้อมผิดพลาดระหว่างอัพโหลดรูปภาพ กรุณาลองอีกครั้ง"."</b>";
@@ -85,13 +83,12 @@
                                        c_pTelephone='$c_pTelephone',
                                        c_pStatus='$c_pStatus',
                                        c_pOtherStatus='$c_pOtherStatus',
-                                       ct_id='$ct_id',
-                                       cp_id='$cp_id'    
+                                       c_familyStatus = '$c_familyStatus'
                                        WHERE c_id='$id'
                                        ");
             
             ?>
-                <meta http-equiv="refresh" content="0; url=?page=child&&cpage=edit&&tab=3&&id=<?= $id ?>">
+                <meta http-equiv="refresh" content="0; url=?page=child&&cpage=edit_1&&tab=3&&id=<?= $id ?>">
 <?php
             }
     }

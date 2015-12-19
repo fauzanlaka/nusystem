@@ -13,15 +13,10 @@ function login(){
 	$objResult = mysqli_fetch_array($objQuery);
 	if(!$objResult)
 	{
-		echo "NO.POKOK atau PASSWORD salah ,";?> <a href="index.php">Login lagi</a>
-	<?php	exit();
-	}
-	else
-	{
-		if($objResult["LoginStatus"] == "1")
-		{
-			echo "'".$strUsername."' Sudah login!";
-			exit();
+              echo '<script language="javascript">';
+                echo 'alert("message successfully sent")';
+                echo '</script>';
+         
 		}
 		else
 		{
@@ -42,5 +37,5 @@ function login(){
 	}
 	mysqli_close($con);
     }   
-}
+
 ?>

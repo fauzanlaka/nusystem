@@ -138,11 +138,16 @@
         </div>
     </div>
     <div class="form-group">
-        <label for="inputEmail" class="col-lg-4 control-label">อื่นๆ ระบุ</label>
-        <div class="col-lg-5">
-            <input type="type" class="form-control input-sm" name="c_pOtherStatus" placeholder="สถานภาพ">
-        </div>
+        <label for="inputEmail" class="col-lg-3"></label>
+        <div class="col-lg-2">
+            <input type="radio" name="c_pStatus" id="optionsRadios1" value="อื่นๆ" <?php if ($c_pStatus == "อื่นๆ"){ echo 'checked'; } ?>>
+            &nbsp;&nbsp;<b>อื่นๆ ระบุ :</b> 
+        </div> 
+    <div class="col-lg-3">
+        <input type="text" class="form-control input-sm" name="c_pOtherStatus" value="<?= $c_pOtherStatus ?>">
+    </div> 
     </div>
+                <br>
     <br>
     
     <div class="pull-left"><font color="gray"><b>9.อื่นๆ</b></font></div>
@@ -157,36 +162,12 @@
     </div>
     
     <div class="form-group">
-        <label for="inputEmail" class="col-lg-3 control-label">ประเภทเด็กกำพร้า</label>
-        <div class="col-lg-3">
-            <select class="form-control input-sm" name="ct_id">
-                <?php
-                    $cType = mysqli_query($con, "SELECT * FROM childType WHERE ct_category='1'");
-                    while($rowCType = mysqli_fetch_array($cType)){
-                ?>
-                <option value="<?= $rowCType['ct_id'] ?>"><?= $rowCType['ct_name'] ?></option>
-                <?php
-                    }
-                ?>
-            </select>
+        <label for="inputEmail" class="col-lg-3 control-label">สถานภาพปัจจุบันของครอบครัว</label>
+        <div class="col-lg-9">
+            <textarea class="form-control input-sm" rows="10" name="familyStatus"></textarea>
         </div>
     </div>
-    
-    <div class="form-group">
-        <label for="inputEmail" class="col-lg-3 control-label">ประเภทโครงการ</label>
-        <div class="col-lg-3">
-            <select class="form-control input-sm" name="cp_id">
-                <?php
-                    $cProject = mysqli_query($con, "SELECT * FROM childProject");
-                    while($rowCProject = mysqli_fetch_array($cProject)){
-                ?>
-                <option value="<?= $rowCProject['cp_id'] ?>"><?= $rowCProject['cp_name'] ?></option>
-                <?php
-                    }
-                ?>
-            </select>
-        </div>
-    </div>
+
     
     <br>
     

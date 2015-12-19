@@ -3,7 +3,7 @@
 ?>
 <h4>
     <div class="pull-left">
-        <span class="glyphicon glyphicon-plus-sign"></span> เพิ่มข้อมูลเด็กกำพร้า
+        <span class="glyphicon glyphicon-plus-sign"></span> <b>เพิ่มข้อมูลเด็กกำพร้า</b>
     </div>
 </h4>
 <br><br>
@@ -29,23 +29,35 @@
     </div>
     
     <div class="form-group">
+        <label for="inputEmail" class="col-lg-2 control-label">ปีที่</label>
+        <div class="col-lg-1">
+            <input class="form-control input-sm" name="generalSchoolClass" placeholder="ปีที่">
+        </div>
+        <div class="col-lg-2"></div>
         <label for="inputEmail" class="col-lg-2 control-label">ตำบล </label>
         <div class="col-lg-3">
             <input class="form-control input-sm" name="generalSchoolSubdistrict" placeholder="ตำบล">
         </div>
+    </div>
+    
+    <div class="form-group">
         <label for="inputEmail" class="col-lg-2 control-label">อำเภอ </label>
         <div class="col-lg-3">
             <input class="form-control input-sm" name="generalSchoolDistrict" placeholder="อำเภอ">
         </div>
-    </div>
-    <div class="form-group">
         <label for="inputEmail" class="col-lg-2 control-label">จังหวัด </label>
         <div class="col-lg-3">
             <input class="form-control input-sm" name="generalSchoolprovince" placeholder="จังหวัด">
         </div>
+    </div>
+    <div class="form-group">
         <label for="inputEmail" class="col-lg-2 control-label">รหัสไปรษณีย์ </label>
         <div class="col-lg-3">
             <input class="form-control input-sm" name="generalSchoolPost" placeholder="รหัสไปรษณีย์">
+        </div>
+        <label for="inputEmail" class="col-lg-2 control-label">เบอร์โทรศัพท์ </label>
+        <div class="col-lg-3">
+            <input class="form-control input-sm" name="generalSchoolTel" placeholder="เบอร์โทรศัพท์">
         </div>
     </div>
     
@@ -66,23 +78,35 @@
     </div>
     
     <div class="form-group">
+        <label for="inputEmail" class="col-lg-2 control-label">ปีที่ </label>
+        <div class="col-lg-1">
+            <input class="form-control input-sm" name="relegionSchoolClass" placeholder="ปีที่">
+        </div>
+        <div class="col-lg-2"></div>
         <label for="inputEmail" class="col-lg-2 control-label">ตำบล </label>
         <div class="col-lg-3">
             <input class="form-control input-sm" name="relegionSchoolSubdistrict" placeholder="ตำบล">
         </div>
+    </div>
+    
+    <div class="form-group">
         <label for="inputEmail" class="col-lg-2 control-label">อำเภอ </label>
         <div class="col-lg-3">
             <input class="form-control input-sm" name="relegionSchoolDistrict" placeholder="อำเภอ">
         </div>
-    </div>
-    <div class="form-group">
         <label for="inputEmail" class="col-lg-2 control-label">จังหวัด </label>
         <div class="col-lg-3">
             <input class="form-control input-sm" name="relegionSchoolprovince" placeholder="จังหวัด">
         </div>
+    </div>
+    <div class="form-group">
         <label for="inputEmail" class="col-lg-2 control-label">รหัสไปรษณีย์ </label>
         <div class="col-lg-3">
             <input class="form-control input-sm" name="relegionSchoolPost" placeholder="รหัสไปรษณีย์">
+        </div>
+        <label for="inputEmail" class="col-lg-2 control-label">โทรศัพท์ </label>
+        <div class="col-lg-3">
+            <input class="form-control input-sm" name="relegionSchoolTel" placeholder="โทรศัพท์">
         </div>
     </div>
     <br>
@@ -124,6 +148,10 @@
         <div class="col-lg-3">
             <input class="form-control input-sm" name="copiesPost" placeholder="รหัสไปรษณีย์">
         </div>
+        <label for="inputEmail" class="col-lg-2 control-label">โทรศัพท์ </label>
+        <div class="col-lg-3">
+            <input class="form-control input-sm" name="copiesTel" placeholder="โทรศัพท์">
+        </div>
     </div>
     <br>
 
@@ -163,6 +191,10 @@
         <label for="inputEmail" class="col-lg-2 control-label">รหัสไปรษณีย์ </label>
         <div class="col-lg-3">
             <input class="form-control input-sm" name="post" placeholder="รหัสไปรษณีย์">
+        </div>
+        <label for="inputEmail" class="col-lg-2 control-label">โทรศัพท์ </label>
+        <div class="col-lg-3">
+            <input class="form-control input-sm" name="tel" placeholder="โทรศัพท์">
         </div>
     </div>
     <br>

@@ -28,6 +28,12 @@
     $province = mysqli_real_escape_string($con, $_POST['province']);
     $post = mysqli_real_escape_string($con, $_POST['post']);
     $status = mysqli_real_escape_string($con, $_POST['status']);
+    $generalSchoolClass = mysqli_real_escape_string($con, $_POST['generalSchoolClass']);
+    $generalSchoolTel = mysqli_real_escape_string($con, $_POST['generalSchoolTel']);
+    $relegionSchoolClass = mysqli_real_escape_string($con, $_POST['relegionSchoolClass']);
+    $relegionSchoolTel = mysqli_real_escape_string($con, $_POST['relegionSchoolTel']);
+    $copiesTel = mysqli_real_escape_string($con, $_POST['copiesTel']);
+    $tel = mysqli_real_escape_string($con, $_POST['tel']);
     
     $INSERT = mysqli_query($con, "UPDATE childs SET
                           c_generalSchool='$generalSchool',
@@ -56,7 +62,14 @@
                           c_district='$district',
                           c_province='$province',
                           c_post='$post',
-                          c_status='$status'
+                          c_status='$status',
+                          c_generalSchoolClass='$generalSchoolClass',
+                          c_generalSchoolTel='$generalSchoolTel',
+                          c_relegionSchoolClass='$relegionSchoolClass',
+                          c_relegionSchoolTel='$relegionSchoolTel',
+                          c_relegionSchoolTel='$relegionSchoolTel',
+                          c_copiesTel='$copiesTel',
+                          c_tel='$tel'
                           WHERE c_id='$id'
                           ");
 ?>

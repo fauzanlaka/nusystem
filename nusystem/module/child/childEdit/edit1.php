@@ -17,6 +17,10 @@
     $fname = str_replace("\'", "&#39;", $rowChild1["c_fName"]);
     $lname = str_replace("\'", "&#39;", $rowChild1["c_lName"]);
     $c_idCard = str_replace("\'", "&#39;", $rowChild1["c_idCard"]);
+    $c_regisDate = str_replace("\'", "&#39;", $rowChild1["c_regisDate"]);
+    $c_gender = $rowChild1['c_gender'];
+    //$c_gender = $rowChild1['c_regisDate'];
+    //$year = date("Y", strtotime($rowChild1['c_regisDate']));
     
     //Get ข้อมูล 2 data
     $c_generalSchool = str_replace("\'", "&#39;", $rowChild1["c_generalSchool"]);
@@ -46,6 +50,14 @@
     $c_province = str_replace("\'", "&#39;", $rowChild1["c_province"]);
     $c_post = str_replace("\'", "&#39;", $rowChild1["c_post"]);
     $c_status = str_replace("\'", "&#39;", $rowChild1["c_status"]);
+    $c_generalSchoolClass = str_replace("\'", "&#39;", $rowChild1["c_generalSchoolClass"]);
+    $c_generalSchoolTel = str_replace("\'", "&#39;", $rowChild1["c_generalSchoolTel"]);
+    $c_relegionSchoolClass = str_replace("\'", "&#39;", $rowChild1["c_relegionSchoolClass"]);
+    $c_relegionSchoolTel = str_replace("\'", "&#39;", $rowChild1["c_relegionSchoolTel"]);
+    $c_copiesTel = str_replace("\'", "&#39;", $rowChild1["c_copiesTel"]);
+    $c_copiesTel = str_replace("\'", "&#39;", $rowChild1["c_copiesTel"]);
+    $c_tel = str_replace("\'", "&#39;", $rowChild1["c_tel"]);
+    $c_familyStatus = str_replace("\'", "&#39;", $rowChild1["c_familyStatus"]);
     
     //Get ข้อมูล 3 data
     $c_fatherName = str_replace("\'", "&#39;", $rowChild1["c_fatherName"]);
@@ -90,11 +102,25 @@
                     <div class="form-group">
                       <label for="inputEmail" class="col-lg-2 control-label">ชื่อ</label>
                       <div class="col-lg-3">
-                        <input type="text" class="form-control input-sm" name="fName" placeholder="ชื่อ" value="<?= $fname ?>">
+                        <input type="text" class="form-control input-sm" name="fName" value="<?= $fname ?>">
                       </div>
                       <label for="inputEmail" class="col-lg-2 control-label">นามสกุล</label>
                       <div class="col-lg-3">
                         <input type="text" class="form-control input-sm" name="lName" value="<?= $lname ?>">
+                      </div>
+                    </div>
+                    
+                    <div class="form-group">
+                      <label for="inputEmail" class="col-lg-2 control-label">ลงทะเบียนเมื่อ </label>
+                      <div class="col-lg-3">
+                        <input type="date" class="form-control input-sm"  name="regisDate" value='<?= $c_regisDate ?>'>
+                      </div>
+                      <label for="inputEmail" class="col-lg-2 control-label">เพศ </label>
+                      <div class="col-lg-2">
+                          <select class='form-control input-sm' name='gender'>
+                              <option value='1' <?php if($c_gender == 1){echo "selected";} ?>>ชาย</option>
+                              <option value='2' <?php if($c_gender == 2){echo "selected";} ?>>หญิง</option>
+                          </select>
                       </div>
                     </div>
 
@@ -170,6 +196,44 @@
                         คน
                       </div>
                     </div>
+                    
+                    <div class="form-group">
+                        <label for="inputEmail" class="col-lg-2 control-label">ประเภทเด็กกำพร้า</label>
+                        <div class="col-lg-2">
+                            <select class="form-control input-sm" name="ct_id">
+                                <?php
+                                    $cType = mysqli_query($con, "SELECT * FROM childType WHERE ct_category='1'");
+                                    while($rowCType = mysqli_fetch_array($cType)){
+                                ?>
+                                <option value="<?= $rowCType['ct_id'] ?>" <?php if($ct_id == $rowCType['ct_id']){ echo 'selected'; } ?>><?= $rowCType['ct_name'] ?></option>
+                                <?php
+                                    }
+                                ?>
+                            </select>
+                        </div>
+                        
+                        <label for="inputEmail" class="col-lg-3 control-label">ประเภทโครงการ</label>
+                        <div class="col-lg-2">
+                            <select class="form-control input-sm" name="cp_id">
+                                <?php
+                                    $cProject = mysqli_query($con, "SELECT * FROM childProject");
+                                    while($rowCProject = mysqli_fetch_array($cProject)){
+                                ?>
+                                <option value="<?= $rowCProject['cp_id'] ?>" <?php if($cp_id == $rowCProject['cp_id']){ echo 'selected'; } ?>><?= $rowCProject['cp_name'] ?></option>
+                                <?php
+                                    }
+                                ?>
+                            </select>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="inputEmail" class="col-lg-2 control-label">ลงทะเบียนเมื่อ </label>
+                        <div class="col-lg-2">
+                            <input type="date" class="form-control input-sm"  name="regisDate" value="<?= $c_regisDate ?>">
+                        </div>
+                   </div>
+                    
                     <br>
                     <font color="gray"><b>2.สมาชิกในครอบครัว:-</b></font><br><br>
                     <div class="form-group">
@@ -250,25 +314,37 @@
                         </select>
                     </div>
                 </div>
-
+                
                 <div class="form-group">
+                    <label for="inputEmail" class="col-lg-2 control-label">ปีที่</label>
+                    <div class="col-lg-1">
+                        <input class="form-control input-sm" name="generalSchoolClass" value="<?= $c_generalSchoolClass ?>">
+                    </div>
+                    <div class="col-lg-2"></div>
                     <label for="inputEmail" class="col-lg-2 control-label">ตำบล </label>
                     <div class="col-lg-3">
                         <input class="form-control input-sm" name="generalSchoolSubdistrict" value="<?= $c_generalSchoolSubdistrict ?>" >
                     </div>
+                </div>
+
+                <div class="form-group">
                     <label for="inputEmail" class="col-lg-2 control-label">อำเภอ </label>
                     <div class="col-lg-3">
                         <input class="form-control input-sm" name="generalSchoolDistrict" value="<?= $c_generalSchoolDistrict ?>">
                     </div>
-                </div>
-                <div class="form-group">
                     <label for="inputEmail" class="col-lg-2 control-label">จังหวัด </label>
                     <div class="col-lg-3">
                         <input class="form-control input-sm" name="generalSchoolprovince" value="<?= $c_generalSchoolprovince ?>">
                     </div>
+                </div>
+                <div class="form-group">
                     <label for="inputEmail" class="col-lg-2 control-label">รหัสไปรษณีย์ </label>
                     <div class="col-lg-3">
                         <input class="form-control input-sm" name="generalSchoolPost" value="<?= $c_generalSchoolPost ?>">
+                    </div>
+                    <label for="inputEmail" class="col-lg-2 control-label">เบอร์โทรศัพท์ </label>
+                    <div class="col-lg-3">
+                        <input class="form-control input-sm" name="generalSchoolTel" value="<?= $c_generalSchoolTel ?>">
                     </div>
                 </div>
 
@@ -287,25 +363,38 @@
                         </select>
                     </div>
                 </div>
-
+                
                 <div class="form-group">
+                    <label for="inputEmail" class="col-lg-2 control-label">ปีที่ </label>
+                    <div class="col-lg-1">
+                        <input class="form-control input-sm" name="relegionSchoolClass" value="<?= $c_relegionSchoolClass ?>">
+                    </div>
+                    <div class="col-lg-2"></div>
                     <label for="inputEmail" class="col-lg-2 control-label">ตำบล </label>
                     <div class="col-lg-3">
                         <input class="form-control input-sm" name="relegionSchoolSubdistrict" value="<?= $c_relegionSchoolSubdistrict ?>">
                     </div>
+                </div>
+
+                <div class="form-group">
                     <label for="inputEmail" class="col-lg-2 control-label">อำเภอ </label>
                     <div class="col-lg-3">
                         <input class="form-control input-sm" name="relegionSchoolDistrict" value="<?= $c_relegionSchoolDistrict ?>">
                     </div>
-                </div>
-                <div class="form-group">
                     <label for="inputEmail" class="col-lg-2 control-label">จังหวัด </label>
                     <div class="col-lg-3">
                         <input class="form-control input-sm" name="relegionSchoolprovince" value="<?= $c_relegionSchoolprovince ?>">
                     </div>
+                </div>
+                
+                <div class="form-group">
                     <label for="inputEmail" class="col-lg-2 control-label">รหัสไปรษณีย์ </label>
                     <div class="col-lg-3">
                         <input class="form-control input-sm" name="relegionSchoolPost" value="<?= $c_relegionSchoolPost ?>">
+                    </div>
+                    <label for="inputEmail" class="col-lg-2 control-label">โทรศัพท์ </label>
+                    <div class="col-lg-3">
+                        <input class="form-control input-sm" name="relegionSchoolTel" value="<?= $c_relegionSchoolTel ?>">
                     </div>
                 </div>
                 <br>
@@ -347,6 +436,10 @@
                     <div class="col-lg-3">
                         <input class="form-control input-sm" name="copiesPost" value="<?= $c_copiesPost ?>">
                     </div>
+                    <label for="inputEmail" class="col-lg-2 control-label">โทรศัพท์ </label>
+                    <div class="col-lg-3">
+                        <input class="form-control input-sm" name="copiesTel" value="<?= $c_copiesTel ?>">
+                    </div>
                 </div>
                 <br>
 
@@ -387,8 +480,16 @@
                     <div class="col-lg-3">
                         <input class="form-control input-sm" name="post" value="<?= $c_post ?>">
                     </div>
+                    <label for="inputEmail" class="col-lg-2 control-label">โทรศัพท์ </label>
+                    <div class="col-lg-3">
+                        <input class="form-control input-sm" name="tel" value="<?= $c_tel ?>">
+                    </div>
                 </div>
                 <br>
+                
+            <?php
+            
+            ?>
             <font color="gray"><b>6.สถานภาพ</b></font>
                     <div class="radio">
                         <label>
@@ -566,36 +667,11 @@
                         <input type="file" class="form-control input-sm" name="image" placeholder="สถานภาพ">
                     </div>
                 </div>
-
+                
                 <div class="form-group">
-                    <label for="inputEmail" class="col-lg-3 control-label">ประเภทเด็กกำพร้า</label>
-                    <div class="col-lg-3">
-                        <select class="form-control input-sm" name="ct_id">
-                            <?php
-                                $cType = mysqli_query($con, "SELECT * FROM childType WHERE ct_category='1'");
-                                while($rowCType = mysqli_fetch_array($cType)){
-                            ?>
-                            <option value="<?= $rowCType['ct_id'] ?>" <?php if($ct_id == $rowCType['ct_id']){ echo 'selected'; } ?>><?= $rowCType['ct_name'] ?></option>
-                            <?php
-                                }
-                            ?>
-                        </select>
-                    </div>
-                </div>
-
-                <div class="form-group">
-                    <label for="inputEmail" class="col-lg-3 control-label">ประเภทโครงการ</label>
-                    <div class="col-lg-3">
-                        <select class="form-control input-sm" name="cp_id">
-                            <?php
-                                $cProject = mysqli_query($con, "SELECT * FROM childProject");
-                                while($rowCProject = mysqli_fetch_array($cProject)){
-                            ?>
-                            <option value="<?= $rowCProject['cp_id'] ?>" <?php if($cp_id == $rowCProject['cp_id']){ echo 'selected'; } ?>><?= $rowCProject['cp_name'] ?></option>
-                            <?php
-                                }
-                            ?>
-                        </select>
+                    <label for="inputEmail" class="col-lg-3 control-label">สถานภาพปัจจุบันของครอบครัว</label>
+                    <div class="col-lg-9">
+                        <textarea class="form-control input-sm" rows="10" name="familyStatus"><?= $c_familyStatus ?></textarea>
                     </div>
                 </div>
 

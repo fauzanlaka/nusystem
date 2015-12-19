@@ -16,17 +16,17 @@
 
 <div class="panel panel-primary">
   <div class="panel-heading">
-    <h3 class="panel-title">จัดการข้อมูลทั่วไป</h3>
+    <h3 class="panel-title">เมนู</h3>
   </div>
   <div class="panel-body">
       <ul class="nav nav-pills nav-stacked">
-            <li role="presentation"><a href="?page=childType&&ctpage=index"><span class='glyphicon glyphicon-triangle-right'></span> ข้อมูลประเภทเด็ก</a></li>
-            <li role="presentation"><a href="?page=child&&cpage=index"><span class='glyphicon glyphicon-triangle-right'></span> ข้อมูลเด็ก</a></li>
-            <li role="presentation"><a href="#"><span class='glyphicon glyphicon-triangle-right'></span> Jadual belajar</a></li>
-            <li role="presentation"><a href="#"><span class='glyphicon glyphicon-triangle-right'></span> Jadual guru</a></li>
-            <li role="presentation"><a href="#"><span class='glyphicon glyphicon-triangle-right'></span> Borang / Form</a></li>
-            <li role="presentation"><a href="#"><span class='glyphicon glyphicon-triangle-right'></span> Peraturan</a></li>
-            <li role="presentation"><a href="#"><span class='glyphicon glyphicon-triangle-right'></span> Struktur</a></li>
+            <li role="presentation"><a href="?page=childType&&ctpage=index"><span class='glyphicon glyphicon-triangle-right'></span> <span class='glyphicon glyphicon-barcode'></span> ข้อมูลประเภทเด็ก</a></li>
+            <li role="presentation"><a href="?page=child&&cpage=index"><span class='glyphicon glyphicon-triangle-right'></span> <span class='glyphicon glyphicon-user'></span> ข้อมูลเด็ก</a></li>
+            <li role="presentation"><a href="?page=report&&rpage=index"><span class='glyphicon glyphicon-triangle-right'></span> <span class='glyphicon glyphicon-list'></span> รายงาน</a></li>
+            <li role="presentation"><a href="#"><span class='glyphicon glyphicon-triangle-right'></span> <span class='glyphicon glyphicon-stats'></span> สถิติ</a></li>
+            <li role="presentation"><a href="#"><span class='glyphicon glyphicon-triangle-right'></span> <span class='glyphicon glyphicon-list-alt'></span> ดาวน์โลหดแบบฟอร์ม</a></li>
+            <li role="presentation"><a href="#"><span class='glyphicon glyphicon-triangle-right'></span> <span class='glyphicon glyphicon-eye-open'></span> อาสาสมัคร</a></li>
+            <li role="presentation"><a href="#"><span class='glyphicon glyphicon-triangle-right'></span> <span class='glyphicon glyphicon-th'></span> คณะกรรมการ</a></li>
             
       </ul>
   </div>

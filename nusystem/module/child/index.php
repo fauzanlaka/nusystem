@@ -4,16 +4,15 @@
       <button data-toggle="dropdown" class="btn btn-success btn-sm dropdown-toggle" data-placeholder="false"><span class="caret"></span></button>
         <ul class="dropdown-menu">
             <li><a href="?page=child&&cpage=step1">เด็กกำพร้า</a></li>
-            <li><a href="?page=child&&cpage=index">เด็กยากจน</a></li>
+            <li><a href="?page=child&&cpage=step1_1">เด็กยากจน</a></li>
         </ul>
     </div>
       <div class="btn-group">
           <a href="?page=child&&cpage=index" class="btn btn-success btn-sm"><span class="glyphicon glyphicon-list"></span> รายชื่อ</button></a>
       <button data-toggle="dropdown" class="btn btn-success btn-sm dropdown-toggle" data-placeholder="false"><span class="caret"></span></button>
         <ul class="dropdown-menu">
-          <li><a href="#">เด็กกำพร้า</a></li>
-          <li><a href="#">เด็กยากจน</a></li>
-          <!-- Other items -->
+          <li><a href="?page=child&&cpage=orphanList">เด็กกำพร้า</a></li>
+          <li><a href="?page=child&&cpage=poorList">เด็กยากจน</a></li>
         </ul>
     </div>
 </div>
@@ -53,8 +52,8 @@ if($cpage == NULL){
         case 'childList':
             include 'module/child/childList/childList.php';
             break;
-        case 'edit':
-            include 'module/child/childEdit/edit.php';
+        case 'edit_1':
+            include 'module/child/childEdit/edit1.php';
             break;
         case 'delete':
             include 'module/child/childEdit/function/delete.php';
@@ -74,5 +73,52 @@ if($cpage == NULL){
         case 'bdel':
             include 'module/child/childEdit/function/bdel.php';
             break;
+        case 'step1_1':
+            include 'module/child/childAdd/step1_1.php';
+            break;
+        case 'step1_1Save':
+            include 'module/child/childAdd/function/step1_1Save.php';
+            break;
+        case 'step2_2':
+            include 'module/child/childAdd/step2_2.php';
+            break;
+        case 'step2_2Save':
+            include 'module/child/childAdd/function/step2_2Save.php';
+            break;
+        case 'step3_3':
+            include 'module/child/childAdd/step3_3.php';
+            break;
+        case 'step3_3Save':
+            include 'module/child/childAdd/function/step3_3Save.php';
+            break;
+        case 'edit_2':
+            include 'module/child/childEdit/edit2.php';
+            break;
+        case 'edit1_1':
+            include 'module/child/childEdit/function/edit1_1.php';
+            break;
+        case 'edit2_2':
+            include 'module/child/childEdit/function/edit2_2.php';
+            break;
+        case 'edit3_3':
+            include 'module/child/childEdit/function/edit3_3.php';
+            break;
+        case 'edit4_4':
+            include 'module/child/childEdit/function/edit4_4.php';
+            break;
+        case 'search':
+            include 'module/child/childSearch/search.php';
+            break;
+        case 'orphanList':
+            include 'module/child/orphanList.php';
+            break;
+        case 'poorList':
+            include 'module/child/poorList.php';
+            break;
+        case 'orphanSearch':
+            include 'module/child/childSearch/orphanSearch.php';
+            break;
+        case 'poorSearch':
+            include 'module/child/childSearch/poorSearch.php';
+            break;
     }				
-?>

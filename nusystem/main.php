@@ -43,7 +43,7 @@
     </style>
 
   </head>
-    <body> 
+    <body style="background-color:#F9F9F9;"> 
         
         <?php include("menu/indexMenu.php"); ?>
         <br><br><br>
@@ -73,6 +73,9 @@
                             case 'child':
                                 include 'module/child/index.php';
                                 break;
+                            case 'report':
+                                include 'module/report/index.php';
+                                break;
                         }
             ?>
             
@@ -86,8 +89,26 @@
         <script type="text/javascript" src="script/jquery-1.3.2.min.js"></script>
         <script type="text/javascript" src="script/script.js"></script>
         <script type="text/javascript" src="function/function.js"></script>
+        <script type="text/javascript" src="tinymce/tinymce.min.js"></script>
+        <script type="text/javascript">
+		tinymce.init({
+		selector: "textarea",
+		theme: "modern",
+		plugins: [
+			"advlist autolink lists link image charmap print preview hr anchor pagebreak",
+			"searchreplace wordcount visualblocks visualchars code fullscreen",
+			"insertdatetime media nonbreaking save table contextmenu directionality",
+			"emoticons template paste textcolor colorpicker textpattern"
+		],
+		toolbar1: "insertfile undo redo | styleselect | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image",
+		toolbar2: "print preview media | forecolor backcolor emoticons",
+		image_advtab: true,
+		templates: [
+			{title: 'Test template 1', content: 'Test 1'},
+			{title: 'Test template 2', content: 'Test 2'}
+		]
+	});
+	</script>
     </body>
 </html>
-<?
-	mysqli_close($con);
-?>
+

@@ -101,7 +101,7 @@ $list = '';
                                 <h4 class="modal-title" id="myModalLabel<?php echo $ct_id ?>"><?= $ct_name ?></h4>
                               </div>
                               <div class="modal-body">
-                                    <textarea class="form-control" data-provide="markdown" rows="10" class="form-control" name="ct_detail" disabled><?= $ct_detail ?></textarea>
+                                    <div class="well"><?= $ct_detail ?></div>
                               </div>
                               <div class="modal-footer">
                                 <button type="button" class="btn btn-default" data-dismiss="modal">ปิด</button>

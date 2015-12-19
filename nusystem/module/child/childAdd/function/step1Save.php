@@ -15,16 +15,20 @@
     $sonNumber = mysqli_real_escape_string($con, $_POST['sonNumber']);
     $menBrethren = mysqli_real_escape_string($con, $_POST['menBrethren']);
     $womenBrethren = mysqli_real_escape_string($con, $_POST['womenBrethren']);
+    $ct_id = $_POST['ct_id'];
+    $cp_id = $_POST['cp_id'];
+    $regisDate = $_POST['regisDate'];
+    $gender = $_POST['gender'];
     
     //--------------------------------------------------------------------------
     //Code creat system
-    $code = "SELECT max(c_code) AS mx FROM childs";
+    $code = "SELECT * FROM childs WHERE c_id = (SELECT MAX(c_id) FROM childs)";
 
     $record = mysqli_query($con, $code) or die(mysqli_error());
 
     $row = mysqli_fetch_assoc($record);
 
-    $mem_old = $row['mx'];// gives the highest id
+    $mem_old = $row['c_code'];// gives the highest id
     
     //Get current year
     $y = date('Y');
@@ -33,15 +37,15 @@
     $tmp1=substr($mem_old,0,3);//จะได้เฉพาะตัวแรกที่เป็นตัวอักษร
     $tmp2=substr($mem_old,3,10);//ตัวเลขที่เหลือ
     $tmp3=$tmp2+1;//จริงๆ เอาไปรวมกับตัว $tmp2 เลยก็ได้ค่ะ แต่ว่ากลัวงง ก็เลยแยกไว้ให้
-    
-    echo "<br>";
-    echo $tmp3;
 
     //อันนี้ใช้ BP(buffalo power) ไปนิดนึง ปรับไปใช้ loop มาช่วยก็ได้นะคะ
     if($tmp3 <= 9){$tmp4 = 'O'.$tmpy.'000000'.$tmp3;}
     if($tmp3 > 9 && $tmp3 <= 99){$tmp4 = 'O'.$tmpy.'00000'.$tmp3;}
-    echo "<br>";
-    echo $tmp4;
+    if($tmp3 > 99 && $tmp3 <= 999){$tmp4 = 'O'.$tmpy.'0000'.$tmp3;}
+    if($tmp3 > 999 && $tmp3 <= 9999){$tmp4 = 'O'.$tmpy.'000'.$tmp3;}
+    if($tmp3 > 9999 && $tmp3 <= 99999){$tmp4 = 'O'.$tmpy.'00'.$tmp3;}
+    if($tmp3 > 99999 && $tmp3 <= 999999){$tmp4 = 'O'.$tmpy.'0'.$tmp3;}
+    if($tmp3 > 99999 && $tmp3 <= 999999){$tmp4 = 'O'.$tmpy.$tmp3;}
     //--------------------------------------------------------------------------
     
     //Existing data checking
@@ -58,9 +62,9 @@
     }else{
     
     $insert = mysqli_query($con, "INSERT INTO childs
-                           (c_fName,c_lName,c_idCard,c_birdthDate,c_wieght,c_hieght,c_shoeSize,c_shirtSize,c_bloodType,c_disease,c_brethren,c_sonNumber,menBrethren,womenBrethren,c_code)
+                           (c_fName,c_lName,c_idCard,c_birdthDate,c_wieght,c_hieght,c_shoeSize,c_shirtSize,c_bloodType,c_disease,c_brethren,c_sonNumber,menBrethren,womenBrethren,c_code,ct_id,cp_id,c_regisDate,c_gender)
                            VALUES
-                           ('$fName','$lName','$idCard','$bDate','$wieght','$hieght','$shoeSize','$shirtSize','$bloodType','$diseases','$brethren','$sonNumber','$menBrethren','$womenBrethren','$tmp4')
+                           ('$fName','$lName','$idCard','$bDate','$wieght','$hieght','$shoeSize','$shirtSize','$bloodType','$diseases','$brethren','$sonNumber','$menBrethren','$womenBrethren','$tmp4','$ct_id','$cp_id','$regisDate','$gender')
                           ");
     $child = mysqli_query($con, "SELECT * FROM childs WHERE c_id = (SELECT MAX(c_id) FROM childs)");
     $rowChild = mysqli_fetch_array($child);
@@ -70,7 +74,7 @@
         if(isset($_POST['fullName'])){
             foreach($_POST['fullName'] as $row=>$Name) 
                 { 
-                    $name = mysql_real_escape_string($Name); 
+                    //$name = mysql_real_escape_string($Name); 
                     $b_fullName = mysqli_real_escape_string($con, $_POST['fullName'][$row]);
                     $b_birdthDate = mysqli_real_escape_string($con, $_POST['birdthDate'][$row]);
                     $b_education = mysqli_real_escape_string($con, $_POST['education'][$row]);
@@ -85,8 +89,7 @@
 
                 }
         }
-?>
-        
+?>    
         <meta http-equiv="refresh" content="0; url=?page=child&&cpage=step2&&id=<?= $c_id ?>">
 <?php
     }

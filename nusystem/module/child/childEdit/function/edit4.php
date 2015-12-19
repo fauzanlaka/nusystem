@@ -1,11 +1,13 @@
 <?php
-         $c_id = $_GET['id'];
+        echo "<b>"."กำลังบันทึกข้อมูล กรุณารอสักครู่..."."</b>";
+
+        $c_id = $_GET['id'];
          
         //Brethen saving
         if(isset($_POST['fullName'])){
             foreach($_POST['fullName'] as $row=>$Name) 
                 { 
-                    $name = mysql_real_escape_string($Name); 
+                    //$name = mysql_real_escape_string($Name); 
                     $b_fullName = mysqli_real_escape_string($con, $_POST['fullName'][$row]);
                     $b_birdthDate = mysqli_real_escape_string($con, $_POST['birdthDate'][$row]);
                     $b_education = mysqli_real_escape_string($con, $_POST['education'][$row]);
@@ -21,4 +23,4 @@
                 }
         }
 ?>
-<meta http-equiv="refresh" content="0; url=?page=child&&cpage=edit&&tab=4&&id=<?= $c_id ?>">
+<meta http-equiv="refresh" content="0; url=?page=child&&cpage=edit_1&&tab=4&&id=<?= $c_id ?>">

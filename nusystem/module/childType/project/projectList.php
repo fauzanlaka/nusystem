@@ -1,7 +1,7 @@
 <?php
 $id = $_SESSION["UserID"];
 $pagic = "?page=childType&&ctpage=projectList";
-$sql = "SELECT COUNT(cp_id) FROM projectType";
+$sql = "SELECT COUNT(cp_id) FROM childProject";
 $query = mysqli_query($con, $sql);
 $row = mysqli_fetch_row($query);
 // Here we have the total row count
@@ -101,7 +101,7 @@ $list = '';
                                 <h4 class="modal-title" id="myModalLabel<?php echo $cp_id ?>"><?= $cp_name ?></h4>
                               </div>
                               <div class="modal-body">
-                                    <textarea class="form-control" data-provide="markdown" rows="10" class="form-control" name="ct_detail" disabled><?= $cp_detail ?></textarea>
+                                    <div class="well"><?= $cp_detail ?></div>
                               </div>
                               <div class="modal-footer">
                                 <button type="button" class="btn btn-default" data-dismiss="modal">ปิด</button>
