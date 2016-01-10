@@ -11,15 +11,29 @@
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    
+    <style> 
+        @font-face {
+            font-family: "jawi";
+            src: url(register/font/jawi.ttf);
+        }
+
+        f.main{
+            font:35px "jawi";
+        }
+        f.subText{
+            font: 18px "jawi";
+        }
+        f.thai{
+            font: 12px "jawi";
+        }
+    </style>
   </head>
-    <body > 
+    <body style='background-image: url("image/Clouds.gif"); opacity:0.8;'> 
         
         <div class="container">
-            <div class="row">
-                <div class="col-md-12">
                 <?php 
                         include("connect.php");
-                        
                         $page = $_GET['page']; // To get the page
                         if($page == NULL){
                             $page = 'main';
@@ -35,15 +49,28 @@
                                 include 'register/step1.php';
                                 break;
                             case 'saveStep1':
-                                include 'register/saveStep1.php';
+                                include 'register/step1Save.php';
                                 break;
-                            case 'step2':
-                                include 'register/step2.php';
+                            case 'success':
+                                include 'register/success.php';
+                                break;
+                            case 'login':
+                                include 'register/login.php';
+                                break;
+                            case 'checkLogin':
+                                include 'register/checkLogin.php';
+                                break;
+                            case 'edit':
+                                include 'register/edit.php';
+                                break;
+                            case 'logout':
+                                include 'register/logout.php';
+                                break;
+                            case 'saveEdit':
+                                include 'register/saveEdit.php';
                                 break;
                         }
                 ?>
-                </div>
-            </div>
         </div>
     
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>

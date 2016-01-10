@@ -8,8 +8,16 @@
     $sql_d = "select count(*) from student_register where (st_id = '$st_id' and re_id = '$re_id')";
     $result_d = mysqli_query($con,$sql_d);
     $row_d = mysqli_fetch_array($result_d);
+    
+    //Payment check 
+    $payment = mysqli_query($con, "SELECT * FROM student_register WHERE pay_status='Belum bayar' and st_id='$st_id'");
+    $rowPayment = mysqli_fetch_array($payment);
+    
+    //Exam payment checking
+    $exam = mysqli_query($con, "SELECT * FROM student_register_exam WHERE pay_status='Belum bayar' and st_id='$st_id'");
+    $rowExam = mysqli_fetch_array($exam);
 		
-    if( $row_d[0] > 0){
+    if($row_d[0] > 0){
 ?>
 <br>
 <div class="alert alert-dismissible alert-danger">
@@ -18,7 +26,23 @@
   <p>Anda sudah daftar , sila periksa di menu <a href="?page=payment&&paymentpage=yuran" class="alert-link">SEJARAH BAYARAN</a>.</p>
 </div>
 <?php
-    }else{
+    }elseif($rowPayment[0] > 0){
+?>
+        <br>
+        <div class="alert alert-dismissible alert-danger">
+          <button type="button" class="close" data-dismiss="alert">×</button>
+          <p>Maaf!! , Terdapat bayaran belum di bayar <a href="?page=payment&&paymentpage=yuran" class="alert-link">SEJARAH BAYARAN</a>.</p>
+        </div>    
+<?php
+        }elseif($rowExam[0] > 0){
+?>
+        <br>
+        <div class="alert alert-dismissible alert-danger">
+          <button type="button" class="close" data-dismiss="alert">×</button>
+          <p>Maaf!! , Terdapat bayaran belum di bayar <a href="?page=payment&&paymentpage=yuran" class="alert-link">SEJARAH BAYARAN</a>.</p>
+        </div>      
+<?php
+        }else{    
         $st_id = $_POST['st_id'];
         $re_id = $_POST['re_id'];
         $term = $_POST['term'];

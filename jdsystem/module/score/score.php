@@ -2,11 +2,18 @@
     //Student ID
     $id = $_SESSION["UserID"];
     $register = mysqli_query($con, "SELECT * FROM student_register WHERE st_id='$id'");
+    $fecId = mysqli_fetch_array($register);
+    $idSend = $fecId['st_id']; 
 ?>
-<br>
-    <h4><span class="glyphicon glyphicon-tags"></span> Hasil perkuliahan</h4>
-    <hr>
-    <?php
+<h4><b>HASIL PERKULIAHAN PER SEMESTER</b></h4>
+<div class="pull-right">
+    <a href="module/score/print.php?id=<?= $idSend ?>" target="_blank" class="btn btn-success btn-sm"><span class="glyphicon glyphicon-print"></span> PRINT</a>
+</div><br>
+<?php
+    //Student ID
+    $id = $_SESSION["UserID"];
+    $register = mysqli_query($con, "SELECT * FROM student_register WHERE st_id='$id'");
+
         //Get all registeration , order by year
         while($rowRegister = mysqli_fetch_array($register)){
             $term = $rowRegister['term'];
@@ -37,7 +44,33 @@
                 <td align="center"><?= $rowSubject['s_code'] ?></td>
                 <td><?= $rowSubject['s_rumiName'] ?></td>
                 <td><?= $rowSubject['t_fnameRumi'] ?> - <?= $rowSubject['t_lnameRumi'] ?></td>
-                <td align="center"><?= $rowSubject['ss_score'] ?></td>
+                <td align="center">
+                    <?php
+                        $score = $rowSubject['ss_score'];
+                        if ($score <= 49){
+                            $score = "F";
+                        }elseif ($score <= 54) {
+                            $score = "D";
+                        }elseif ($score <= 59) {
+                            $score = "D+";
+                        }elseif ($score <= 64) {
+                            $score = "C";
+                        }elseif ($score <= 69) {
+                            $score = "C+";
+                        }elseif ($score <= 74) {
+                            $score = "B";
+                        }elseif ($score <= 79) {
+                            $score = "B+";    
+                        }elseif ($score <= 84) {
+                                $score = "A";
+                        }elseif ($score <= 89) {
+                                $score = "A+";
+                        }  else {
+                            $score = "A+";
+                        }
+                    ?>
+                    <?= $score ?>
+                </td>
             </tr>
             <?php
                 }

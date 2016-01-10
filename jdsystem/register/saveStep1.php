@@ -82,7 +82,6 @@
         $rsQueryMax = mysqli_fetch_array($queryMax);
         
         //Class process
-        
         //If gender is male
         if($gender == 'Lelaki'){
             $sqlMaleA = mysqli_query($con, "SELECT MAX(testNumber) AS max FROM pretest WHERE testClass='A'");

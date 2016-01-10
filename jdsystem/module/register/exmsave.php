@@ -2,6 +2,8 @@
     //Chek data kata dia baya dokgi
     $st_id = $_POST['st_id'];
     $rx_id = $_POST['rx_id'];
+    $year = $_POST['year'];
+    $term = $_POST['term'];
     
     //Exam bubble register checking 
     $sql_chk = mysqli_query($con, "SELECT * FROM student_register_exam WHERE (st_id ='$st_id' and rx_id='$rx_id')");
@@ -16,9 +18,9 @@
                        INNER JOIN year ye ON re.y_id=ye.y_id
                        WHERE re_id = (SELECT MAX(re_id) FROM register)");
     $row2 = mysqli_fetch_array($sql_registerNow);
-    $term = $row2['term_id'];
-    $year = $row2['year'];
-    
+    //$term = $row2['term_id'];
+    //$year = $row2['year'];
+
     //study registering checking
     $sql_register = mysqli_query($con, "SELECT * FROM student_register WHERE (term='$term' and academic_year='$year' and st_id='$st_id')");
     $row3 = mysqli_fetch_array($sql_register);
