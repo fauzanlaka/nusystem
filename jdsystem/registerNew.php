@@ -22,7 +22,7 @@
             font:35px "jawi";
         }
         f.subText{
-            font: 18px "jawi";
+            font: 25px "jawi";
         }
         f.thai{
             font: 12px "jawi";

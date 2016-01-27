@@ -1,4 +1,7 @@
 <br>
+<div class="pull-left">
+        <a href="?page=add" class="btn btn-warning btn-sm"><span class="glyphicon glyphicon-arrow-left"></span> BACK</a>
+</div>
 <p align="center"><img src="image/jisda.png" class="img-responsive" alt="Responsive image" width="150px" height="1px"></p>
 <h4 align="center"><f class="main">جامعة الشيخ داود الفطاني اﻹسلامية - جالا </f></h4>
 <h5 align="center"><b>PENERIMAAN MAHASISWA BARU TAHUN AKADEMIK 2016</b></h5>
@@ -13,30 +16,30 @@
                 <div class="form-group">
                     <label for="inputEmail" class="col-lg-3 control-label">Nama - Nasab :</label>
                     <div class="col-lg-3">
-                        <input type="text" class="form-control input-sm" placeholder="Nama" name="fnameRumi" required>
+                        <input type="text" class="form-control input-sm" placeholder="Nama (Tulisan rumi)" name="fnameRumi" required>
                     </div>
                     <div class="col-lg-3">
-                        <input type="text" class="form-control input-sm" placeholder="Nasab" name="lnameRumi" required>
+                        <input type="text" class="form-control input-sm" placeholder="Nasab (Tulisan rumi)" name="lnameRumi" required>
                     </div>
                 </div>
 
                 <div class="form-group">
                       <label for="inputEmail" class="col-lg-3 control-label">ชื่อ - นามสกุล :</label>
                       <div class="col-lg-3">
-                          <input type="text" class="form-control input-sm" placeholder="ชื่อ" name="t_studentname" required>
+                          <input type="text" class="form-control input-sm" placeholder="ชื่อ (ภาษาไทย)" name="t_studentname" required>
                       </div>
                       <div class="col-lg-3">
-                          <input type="text" class="form-control input-sm" placeholder="นามสกุล" name="t_studentlastname" required>
+                          <input type="text" class="form-control input-sm" placeholder="นามสกุล (ภาษาไทย)" name="t_studentlastname" required>
                       </div>
                 </div>
 
                 <div class="form-group">
                     <label for="inputEmail" class="col-lg-3 control-label">نام - نسب :</label>
                     <div class="col-lg-3">
-                        <input type="text" class="form-control input-sm" placeholder="نام" name="fnameJawi">
+                        <input type="text" class="form-control input-sm" placeholder="نام توليسن جاوي" name="fnameJawi">
                     </div>
                     <div class="col-lg-3">
-                        <input type="text" class="form-control input-sm" placeholder="نسب" name="lnameJawi">
+                        <input type="text" class="form-control input-sm" placeholder="نسب توليسن جاوي" name="lnameJawi">
                     </div>
                 </div>
 
@@ -53,8 +56,8 @@
 
                 <div class="form-group">
                     <label for="inputEmail" class="col-lg-3 control-label"> No.Kad pengenalan :</label>
-                    <div class="col-lg-3">
-                        <input type="text" class="form-control input-sm" placeholder="No.Kad pengenalan" name="idCard">
+                    <div class="col-lg-4">
+                        <input type="text" class="form-control input-sm" placeholder="No.Kad pengenalan (เลขประจำตัวประชาชน)" name="idCard">
                     </div>
                 </div>
 
@@ -116,7 +119,7 @@
                     </div>
                 </div>
 
-                <p class="text-success"><b>BAHAGIAN 2 : Alamat (ที่อยู่)</b></p>
+                <p class="text-success"><b>BAHAGIAN 2 : Alamat (ที่อยู่ให้กรอกเป็นภาษาไทย)</b></p>
 
                 <div class="form-group">
                     <label for="inputEmail" class="col-lg-3 control-label">หมู่บ้าน :</label>

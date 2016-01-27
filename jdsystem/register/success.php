@@ -1,3 +1,4 @@
+
 <?php
     $st_id = $_GET['id'];
     $student = mysqli_query($con, "SELECT s.*,p.* FROM students s INNER JOIN pretest p ON s.st_id=p.st_id WHERE p.st_id='$st_id'");
@@ -19,15 +20,27 @@
     
     
 ?>
-
 <div class="col-lg-3"></div>
     
         <div class="col-lg-6">
-            <div id="printableArea">
+            
+            
                 <br>
                 <p align="center"><img src="image/jisda.png" class="img-responsive" alt="Responsive image" width="150px" height="1px"></p>
                 <h4 align="center"><b><f class="main">جامعة الشيخ داود الفطاني اﻹسلامية - جالا </f></b></h4>
                 <h5 align="center"><b><f class="main">فنريمأن مهاسيسوا بارو تاهون اکاديميک 2016</f></b></h5>
+            
+                <div class="alert alert-dismissible alert-danger">
+                    <h4 class="text-right"><f class="subText">! چاتتن</f></h4>
+                    <p class="text-right">
+                        <f class="subText">
+                            اونتوق لڠکه ستروسڽ , سيمفنکن اتو ايڠت نمبر دفتر  , کمدين  داتڠ  دايداره جيسدا اونتوق سمفورناکن فندفتران اندا دڠن مثرهکن فرشراطن يڠ دفرلوكن<br>
+                            <a href="#" class="alert-link">تاريخ اخير اونتوق سره فرشرطن اداله  29-2-2016 </a>
+                        </f>
+                    </p>
+                </div>    
+                
+            <div id="printableArea">
                 <div class="panel panel-primary">
                     <div class="panel-body">
                         <p class="text-center"><f class="main">كرتس لافوران فندفتران</p>
@@ -59,15 +72,16 @@
                         <p class="text-right"><f class="subText"> فيليهن کدوا : <?= $fakulty2Name ?> <?php if($second_dpId != 0){ echo "&nbsp;&nbsp;&nbsp;&nbsp;"."جوروسن"." ".$department2Name; } ?></f>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>
                         
                         <p class="text-right"><f class="subText"></f><?= $pre_username ?> : Username</p>
-                        <p class="text-right"><f class="subText"></f><?= $pre_password ?> : Username</p>
+                        <p class="text-right"><f class="subText"></f><?= $pre_password ?> : Password</p>
                     </div>
                 </div>
             </div>
             
             <div align="center">
                 <button type="button" class="btn btn-success btn-sm" onclick="printDiv('printableArea')">Print <span class="glyphicon glyphicon-print"></span></button>
+                <a href="registerNew.php" class="btn btn-success btn-sm"><span class="glyphicon glyphicon-ok"></span> SELESAIKAN</a> 
             </div>
-            
+            <br><br>
         </div>
 
 <div class="col-lg-3"></div>
@@ -83,4 +97,5 @@
 
             document.body.innerHTML = originalContents;
         }
+        
 </script>
